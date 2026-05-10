@@ -36,7 +36,20 @@ st.set_page_config(
 )
 
 # ---------- Login Gate ----------
-_VALID_PASSWORDS = {"FAIDIL", "IHZAN"}
+def _get_valid_passwords() -> set:
+    """Baca password dari st.secrets (production) atau fallback env var."""
+    try:
+        raw = st.secrets["auth"]["passwords"]
+        # secrets bisa string "FAIDIL,IHZAN" atau list ["FAIDIL","IHZAN"]
+        if isinstance(raw, str):
+            return {p.strip().upper() for p in raw.split(",") if p.strip()}
+        return {p.strip().upper() for p in raw if p.strip()}
+    except Exception:
+        import os
+        fallback = os.environ.get("APP_PASSWORDS", "")
+        if fallback:
+            return {p.strip().upper() for p in fallback.split(",") if p.strip()}
+        return set()
 
 if not st.session_state.get("authenticated", False):
     st.markdown(
@@ -52,7 +65,8 @@ if not st.session_state.get("authenticated", False):
         pwd_input = st.text_input("Password", type="password", label_visibility="collapsed",
                                   placeholder="Masukkan password…")
         if st.button("Masuk", use_container_width=True, type="primary"):
-            if pwd_input.strip().upper() in _VALID_PASSWORDS:
+            valid = _get_valid_passwords()
+            if pwd_input.strip().upper() in valid:
                 st.session_state["authenticated"] = True
                 st.rerun()
             else:
