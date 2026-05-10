@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Data — raw source files (too large for git)
+data/raw/ojk/          # OJK SPI zip/xlsx originals (276 MB)
+data/raw/bps/source/   # BPS PDF publications (~200 MB)
+data/raw/*.xls
+data/raw/*.xlsx
+
+# Keep: all CSVs (processed data, small)
+!data/raw/*.csv
+!data/raw/bps/*.csv
+!data/raw/bps/produksi/*.csv
+!data/raw/bps/ntp/*.csv
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Streamlit
+.streamlit/secrets.toml

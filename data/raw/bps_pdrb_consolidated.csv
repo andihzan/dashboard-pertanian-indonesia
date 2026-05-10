@@ -1,0 +1,749 @@
+tahun,provinsi,jenis_harga,nilai_miliar_rp,sumber,status
+2020,Aceh,Berlaku,51548.0,BPS PDRB,real
+2021,Aceh,Berlaku,55611.0,BPS PDRB,real
+2022,Aceh,Berlaku,62299.0,BPS PDRB,real
+2023,Aceh,Berlaku,69757.0,BPS PDRB,real
+2024,Aceh,Berlaku,75318.0,BPS PDRB,real
+2020,Aceh,Konstan,37900.0,BPS PDRB,real
+2021,Aceh,Konstan,37768.0,BPS PDRB,real
+2022,Aceh,Konstan,39005.0,BPS PDRB,real
+2023,Aceh,Konstan,41626.0,BPS PDRB,real
+2024,Aceh,Konstan,42121.0,BPS PDRB,real
+2020,Sumatera Utara,Berlaku,173075.0,BPS PDRB,real
+2021,Sumatera Utara,Berlaku,189491.0,BPS PDRB,real
+2022,Sumatera Utara,Berlaku,219416.0,BPS PDRB,real
+2023,Sumatera Utara,Berlaku,247948.0,BPS PDRB,real
+2024,Sumatera Utara,Berlaku,280263.0,BPS PDRB,real
+2020,Sumatera Utara,Konstan,136327.0,BPS PDRB,real
+2021,Sumatera Utara,Konstan,141601.0,BPS PDRB,real
+2022,Sumatera Utara,Konstan,148722.0,BPS PDRB,real
+2023,Sumatera Utara,Konstan,153238.0,BPS PDRB,real
+2024,Sumatera Utara,Konstan,158953.0,BPS PDRB,real
+2020,Sumatera Barat,Berlaku,54099.0,BPS PDRB,real
+2021,Sumatera Barat,Berlaku,54886.0,BPS PDRB,real
+2022,Sumatera Barat,Berlaku,60510.0,BPS PDRB,real
+2023,Sumatera Barat,Berlaku,65801.0,BPS PDRB,real
+2024,Sumatera Barat,Berlaku,71162.0,BPS PDRB,real
+2020,Sumatera Barat,Konstan,37993.0,BPS PDRB,real
+2021,Sumatera Barat,Konstan,38821.0,BPS PDRB,real
+2022,Sumatera Barat,Konstan,40189.0,BPS PDRB,real
+2023,Sumatera Barat,Konstan,41613.0,BPS PDRB,real
+2024,Sumatera Barat,Konstan,42468.0,BPS PDRB,real
+2020,Riau,Berlaku,194661.0,BPS PDRB,real
+2021,Riau,Berlaku,225489.0,BPS PDRB,real
+2022,Riau,Berlaku,253079.0,BPS PDRB,real
+2023,Riau,Berlaku,269938.0,BPS PDRB,real
+2024,Riau,Berlaku,301626.0,BPS PDRB,real
+2020,Riau,Konstan,135124.0,BPS PDRB,real
+2021,Riau,Konstan,140718.0,BPS PDRB,real
+2022,Riau,Konstan,144691.0,BPS PDRB,real
+2023,Riau,Konstan,149361.0,BPS PDRB,real
+2024,Riau,Konstan,152698.0,BPS PDRB,real
+2020,Jambi,Berlaku,63563.0,BPS PDRB,real
+2021,Jambi,Berlaku,73232.0,BPS PDRB,real
+2022,Jambi,Berlaku,83576.0,BPS PDRB,real
+2023,Jambi,Berlaku,93493.0,BPS PDRB,real
+2024,Jambi,Berlaku,109582.0,BPS PDRB,real
+2020,Jambi,Konstan,39752.0,BPS PDRB,real
+2021,Jambi,Konstan,41209.0,BPS PDRB,real
+2022,Jambi,Konstan,43268.0,BPS PDRB,real
+2023,Jambi,Konstan,45697.0,BPS PDRB,real
+2024,Jambi,Konstan,47640.0,BPS PDRB,real
+2020,Sumatera Selatan,Berlaku,68961.0,BPS PDRB,real
+2021,Sumatera Selatan,Berlaku,72602.0,BPS PDRB,real
+2022,Sumatera Selatan,Berlaku,77172.0,BPS PDRB,real
+2023,Sumatera Selatan,Berlaku,82400.0,BPS PDRB,real
+2024,Sumatera Selatan,Berlaku,90047.0,BPS PDRB,real
+2020,Sumatera Selatan,Konstan,53282.0,BPS PDRB,real
+2021,Sumatera Selatan,Konstan,54835.0,BPS PDRB,real
+2022,Sumatera Selatan,Konstan,56927.0,BPS PDRB,real
+2023,Sumatera Selatan,Konstan,58154.0,BPS PDRB,real
+2024,Sumatera Selatan,Konstan,59660.0,BPS PDRB,real
+2020,Bengkulu,Berlaku,20782.0,BPS PDRB,real
+2021,Bengkulu,Berlaku,22533.0,BPS PDRB,real
+2022,Bengkulu,Berlaku,24951.0,BPS PDRB,real
+2023,Bengkulu,Berlaku,27288.0,BPS PDRB,real
+2024,Bengkulu,Berlaku,31019.0,BPS PDRB,real
+2020,Bengkulu,Konstan,12796.0,BPS PDRB,real
+2021,Bengkulu,Konstan,13110.0,BPS PDRB,real
+2022,Bengkulu,Konstan,13699.0,BPS PDRB,real
+2023,Bengkulu,Konstan,13982.0,BPS PDRB,real
+2024,Bengkulu,Konstan,14341.0,BPS PDRB,real
+2020,Lampung,Berlaku,104967.0,BPS PDRB,real
+2021,Lampung,Berlaku,105185.0,BPS PDRB,real
+2022,Lampung,Berlaku,115452.0,BPS PDRB,real
+2023,Lampung,Berlaku,122528.0,BPS PDRB,real
+2024,Lampung,Berlaku,126802.0,BPS PDRB,real
+2020,Lampung,Konstan,68312.0,BPS PDRB,real
+2021,Lampung,Konstan,67970.0,BPS PDRB,real
+2022,Lampung,Konstan,69318.0,BPS PDRB,real
+2023,Lampung,Konstan,69691.0,BPS PDRB,real
+2024,Lampung,Konstan,68237.0,BPS PDRB,real
+2020,Kepulauan Bangka Belitung,Berlaku,15444.0,BPS PDRB,real
+2021,Kepulauan Bangka Belitung,Berlaku,16887.0,BPS PDRB,real
+2022,Kepulauan Bangka Belitung,Berlaku,18274.0,BPS PDRB,real
+2023,Kepulauan Bangka Belitung,Berlaku,19997.0,BPS PDRB,real
+2024,Kepulauan Bangka Belitung,Berlaku,21786.0,BPS PDRB,real
+2020,Kepulauan Bangka Belitung,Konstan,10666.0,BPS PDRB,real
+2021,Kepulauan Bangka Belitung,Konstan,10769.0,BPS PDRB,real
+2022,Kepulauan Bangka Belitung,Konstan,10876.0,BPS PDRB,real
+2023,Kepulauan Bangka Belitung,Konstan,11282.0,BPS PDRB,real
+2024,Kepulauan Bangka Belitung,Konstan,11635.0,BPS PDRB,real
+2020,Kepulauan Riau,Berlaku,8047.0,BPS PDRB,real
+2021,Kepulauan Riau,Berlaku,8462.0,BPS PDRB,real
+2022,Kepulauan Riau,Berlaku,9371.0,BPS PDRB,real
+2023,Kepulauan Riau,Berlaku,9899.0,BPS PDRB,real
+2024,Kepulauan Riau,Berlaku,10356.0,BPS PDRB,real
+2020,Kepulauan Riau,Konstan,5467.0,BPS PDRB,real
+2021,Kepulauan Riau,Konstan,5322.0,BPS PDRB,real
+2022,Kepulauan Riau,Konstan,5602.0,BPS PDRB,real
+2023,Kepulauan Riau,Konstan,5688.0,BPS PDRB,real
+2024,Kepulauan Riau,Konstan,5720.0,BPS PDRB,real
+2020,DKI Jakarta,Berlaku,2237.0,BPS PDRB,real
+2021,DKI Jakarta,Berlaku,2377.0,BPS PDRB,real
+2022,DKI Jakarta,Berlaku,2531.0,BPS PDRB,real
+2023,DKI Jakarta,Berlaku,2515.0,BPS PDRB,real
+2024,DKI Jakarta,Berlaku,2762.0,BPS PDRB,real
+2020,DKI Jakarta,Konstan,1405.0,BPS PDRB,real
+2021,DKI Jakarta,Konstan,1463.0,BPS PDRB,real
+2022,DKI Jakarta,Konstan,1501.0,BPS PDRB,real
+2023,DKI Jakarta,Konstan,1442.0,BPS PDRB,real
+2024,DKI Jakarta,Konstan,1517.0,BPS PDRB,real
+2020,Jawa Barat,Berlaku,192112.0,BPS PDRB,real
+2021,Jawa Barat,Berlaku,188594.0,BPS PDRB,real
+2022,Jawa Barat,Berlaku,207717.0,BPS PDRB,real
+2023,Jawa Barat,Berlaku,221651.0,BPS PDRB,real
+2024,Jawa Barat,Berlaku,237632.0,BPS PDRB,real
+2020,Jawa Barat,Konstan,107001.0,BPS PDRB,real
+2021,Jawa Barat,Konstan,108407.0,BPS PDRB,real
+2022,Jawa Barat,Konstan,113186.0,BPS PDRB,real
+2023,Jawa Barat,Konstan,113309.0,BPS PDRB,real
+2024,Jawa Barat,Konstan,115105.0,BPS PDRB,real
+2020,Jawa Tengah,Berlaku,192607.0,BPS PDRB,real
+2021,Jawa Tengah,Berlaku,196835.0,BPS PDRB,real
+2022,Jawa Tengah,Berlaku,211491.0,BPS PDRB,real
+2023,Jawa Tengah,Berlaku,224386.0,BPS PDRB,real
+2024,Jawa Tengah,Berlaku,236883.0,BPS PDRB,real
+2020,Jawa Tengah,Konstan,126112.0,BPS PDRB,real
+2021,Jawa Tengah,Konstan,127066.0,BPS PDRB,real
+2022,Jawa Tengah,Konstan,130763.0,BPS PDRB,real
+2023,Jawa Tengah,Konstan,131346.0,BPS PDRB,real
+2024,Jawa Tengah,Konstan,133194.0,BPS PDRB,real
+2020,DI Yogyakarta,Berlaku,14057.0,BPS PDRB,real
+2021,DI Yogyakarta,Berlaku,14602.0,BPS PDRB,real
+2022,DI Yogyakarta,Berlaku,16526.0,BPS PDRB,real
+2023,DI Yogyakarta,Berlaku,18488.0,BPS PDRB,real
+2024,DI Yogyakarta,Berlaku,19201.0,BPS PDRB,real
+2020,DI Yogyakarta,Konstan,8535.0,BPS PDRB,real
+2021,DI Yogyakarta,Konstan,8638.0,BPS PDRB,real
+2022,DI Yogyakarta,Konstan,9078.0,BPS PDRB,real
+2023,DI Yogyakarta,Konstan,9170.0,BPS PDRB,real
+2024,DI Yogyakarta,Konstan,9177.0,BPS PDRB,real
+2020,Jawa Timur,Berlaku,273246.0,BPS PDRB,real
+2021,Jawa Timur,Berlaku,281783.0,BPS PDRB,real
+2022,Jawa Timur,Berlaku,303510.0,BPS PDRB,real
+2023,Jawa Timur,Berlaku,326086.0,BPS PDRB,real
+2024,Jawa Timur,Berlaku,337661.0,BPS PDRB,real
+2020,Jawa Timur,Konstan,167631.0,BPS PDRB,real
+2021,Jawa Timur,Konstan,170557.0,BPS PDRB,real
+2022,Jawa Timur,Konstan,173748.0,BPS PDRB,real
+2023,Jawa Timur,Konstan,177669.0,BPS PDRB,real
+2024,Jawa Timur,Konstan,177790.0,BPS PDRB,real
+2020,Banten,Berlaku,38998.0,BPS PDRB,real
+2021,Banten,Berlaku,40200.0,BPS PDRB,real
+2022,Banten,Berlaku,44058.0,BPS PDRB,real
+2023,Banten,Berlaku,46623.0,BPS PDRB,real
+2024,Banten,Berlaku,49368.0,BPS PDRB,real
+2020,Banten,Konstan,25275.0,BPS PDRB,real
+2021,Banten,Konstan,25417.0,BPS PDRB,real
+2022,Banten,Konstan,26491.0,BPS PDRB,real
+2023,Banten,Konstan,26532.0,BPS PDRB,real
+2024,Banten,Konstan,26703.0,BPS PDRB,real
+2020,Bali,Berlaku,33832.0,BPS PDRB,real
+2021,Bali,Berlaku,34767.0,BPS PDRB,real
+2022,Bali,Berlaku,36014.0,BPS PDRB,real
+2023,Bali,Berlaku,37710.0,BPS PDRB,real
+2024,Bali,Berlaku,40059.0,BPS PDRB,real
+2020,Bali,Konstan,21269.0,BPS PDRB,real
+2021,Bali,Konstan,21338.0,BPS PDRB,real
+2022,Bali,Konstan,21157.0,BPS PDRB,real
+2023,Bali,Konstan,21039.0,BPS PDRB,real
+2024,Bali,Konstan,21580.0,BPS PDRB,real
+2020,Nusa Tenggara Barat,Berlaku,30977.0,BPS PDRB,real
+2021,Nusa Tenggara Barat,Berlaku,31933.0,BPS PDRB,real
+2022,Nusa Tenggara Barat,Berlaku,33568.0,BPS PDRB,real
+2023,Nusa Tenggara Barat,Berlaku,36992.0,BPS PDRB,real
+2024,Nusa Tenggara Barat,Berlaku,39096.0,BPS PDRB,real
+2020,Nusa Tenggara Barat,Konstan,21466.0,BPS PDRB,real
+2021,Nusa Tenggara Barat,Konstan,21712.0,BPS PDRB,real
+2022,Nusa Tenggara Barat,Konstan,22187.0,BPS PDRB,real
+2023,Nusa Tenggara Barat,Konstan,22643.0,BPS PDRB,real
+2024,Nusa Tenggara Barat,Konstan,22992.0,BPS PDRB,real
+2020,Nusa Tenggara Timur,Berlaku,30356.0,BPS PDRB,real
+2021,Nusa Tenggara Timur,Berlaku,32339.0,BPS PDRB,real
+2022,Nusa Tenggara Timur,Berlaku,35136.0,BPS PDRB,real
+2023,Nusa Tenggara Timur,Berlaku,37677.0,BPS PDRB,real
+2024,Nusa Tenggara Timur,Berlaku,39627.0,BPS PDRB,real
+2020,Nusa Tenggara Timur,Konstan,18681.0,BPS PDRB,real
+2021,Nusa Tenggara Timur,Konstan,19602.0,BPS PDRB,real
+2022,Nusa Tenggara Timur,Konstan,20342.0,BPS PDRB,real
+2023,Nusa Tenggara Timur,Konstan,20842.0,BPS PDRB,real
+2024,Nusa Tenggara Timur,Konstan,21208.0,BPS PDRB,real
+2020,Kalimantan Barat,Berlaku,44735.0,BPS PDRB,real
+2021,Kalimantan Barat,Berlaku,49220.0,BPS PDRB,real
+2022,Kalimantan Barat,Berlaku,53976.0,BPS PDRB,real
+2023,Kalimantan Barat,Berlaku,57096.0,BPS PDRB,real
+2024,Kalimantan Barat,Berlaku,65236.0,BPS PDRB,real
+2020,Kalimantan Barat,Konstan,32371.0,BPS PDRB,real
+2021,Kalimantan Barat,Konstan,33812.0,BPS PDRB,real
+2022,Kalimantan Barat,Konstan,34548.0,BPS PDRB,real
+2023,Kalimantan Barat,Konstan,35109.0,BPS PDRB,real
+2024,Kalimantan Barat,Konstan,36151.0,BPS PDRB,real
+2020,Kalimantan Tengah,Berlaku,33054.0,BPS PDRB,real
+2021,Kalimantan Tengah,Berlaku,37616.0,BPS PDRB,real
+2022,Kalimantan Tengah,Berlaku,40831.0,BPS PDRB,real
+2023,Kalimantan Tengah,Berlaku,44775.0,BPS PDRB,real
+2024,Kalimantan Tengah,Berlaku,49837.0,BPS PDRB,real
+2020,Kalimantan Tengah,Konstan,21305.0,BPS PDRB,real
+2021,Kalimantan Tengah,Konstan,22073.0,BPS PDRB,real
+2022,Kalimantan Tengah,Konstan,22834.0,BPS PDRB,real
+2023,Kalimantan Tengah,Konstan,23837.0,BPS PDRB,real
+2024,Kalimantan Tengah,Konstan,24148.0,BPS PDRB,real
+2020,Kalimantan Selatan,Berlaku,25799.0,BPS PDRB,real
+2021,Kalimantan Selatan,Berlaku,26864.0,BPS PDRB,real
+2022,Kalimantan Selatan,Berlaku,28680.0,BPS PDRB,real
+2023,Kalimantan Selatan,Berlaku,30679.0,BPS PDRB,real
+2024,Kalimantan Selatan,Berlaku,33119.0,BPS PDRB,real
+2020,Kalimantan Selatan,Konstan,18399.0,BPS PDRB,real
+2021,Kalimantan Selatan,Konstan,18614.0,BPS PDRB,real
+2022,Kalimantan Selatan,Konstan,18911.0,BPS PDRB,real
+2023,Kalimantan Selatan,Konstan,19537.0,BPS PDRB,real
+2024,Kalimantan Selatan,Konstan,20351.0,BPS PDRB,real
+2020,Kalimantan Timur,Berlaku,53455.0,BPS PDRB,real
+2021,Kalimantan Timur,Berlaku,59133.0,BPS PDRB,real
+2022,Kalimantan Timur,Berlaku,64995.0,BPS PDRB,real
+2023,Kalimantan Timur,Berlaku,67688.0,BPS PDRB,real
+2024,Kalimantan Timur,Berlaku,74363.0,BPS PDRB,real
+2020,Kalimantan Timur,Konstan,33027.0,BPS PDRB,real
+2021,Kalimantan Timur,Konstan,33004.0,BPS PDRB,real
+2022,Kalimantan Timur,Konstan,33713.0,BPS PDRB,real
+2023,Kalimantan Timur,Konstan,34551.0,BPS PDRB,real
+2024,Kalimantan Timur,Konstan,35373.0,BPS PDRB,real
+2020,Kalimantan Utara,Berlaku,16536.0,BPS PDRB,real
+2021,Kalimantan Utara,Berlaku,18085.0,BPS PDRB,real
+2022,Kalimantan Utara,Berlaku,19554.0,BPS PDRB,real
+2023,Kalimantan Utara,Berlaku,20957.0,BPS PDRB,real
+2024,Kalimantan Utara,Berlaku,21699.0,BPS PDRB,real
+2020,Kalimantan Utara,Konstan,10926.0,BPS PDRB,real
+2021,Kalimantan Utara,Konstan,11301.0,BPS PDRB,real
+2022,Kalimantan Utara,Konstan,11723.0,BPS PDRB,real
+2023,Kalimantan Utara,Konstan,12230.0,BPS PDRB,real
+2024,Kalimantan Utara,Konstan,12444.0,BPS PDRB,real
+2020,Sulawesi Utara,Berlaku,28449.0,BPS PDRB,real
+2021,Sulawesi Utara,Berlaku,30075.0,BPS PDRB,real
+2022,Sulawesi Utara,Berlaku,32816.0,BPS PDRB,real
+2023,Sulawesi Utara,Berlaku,35165.0,BPS PDRB,real
+2024,Sulawesi Utara,Berlaku,38586.0,BPS PDRB,real
+2020,Sulawesi Utara,Konstan,17705.0,BPS PDRB,real
+2021,Sulawesi Utara,Konstan,18040.0,BPS PDRB,real
+2022,Sulawesi Utara,Konstan,19187.0,BPS PDRB,real
+2023,Sulawesi Utara,Konstan,20045.0,BPS PDRB,real
+2024,Sulawesi Utara,Konstan,21114.0,BPS PDRB,real
+2020,Sulawesi Tengah,Berlaku,42962.0,BPS PDRB,real
+2021,Sulawesi Tengah,Berlaku,46500.0,BPS PDRB,real
+2022,Sulawesi Tengah,Berlaku,51207.0,BPS PDRB,real
+2023,Sulawesi Tengah,Berlaku,54803.0,BPS PDRB,real
+2024,Sulawesi Tengah,Berlaku,59568.0,BPS PDRB,real
+2020,Sulawesi Tengah,Konstan,29594.0,BPS PDRB,real
+2021,Sulawesi Tengah,Konstan,30793.0,BPS PDRB,real
+2022,Sulawesi Tengah,Konstan,31640.0,BPS PDRB,real
+2023,Sulawesi Tengah,Konstan,32225.0,BPS PDRB,real
+2024,Sulawesi Tengah,Konstan,32848.0,BPS PDRB,real
+2020,Sulawesi Selatan,Berlaku,109460.0,BPS PDRB,real
+2021,Sulawesi Selatan,Berlaku,122835.0,BPS PDRB,real
+2022,Sulawesi Selatan,Berlaku,133923.0,BPS PDRB,real
+2023,Sulawesi Selatan,Berlaku,141545.0,BPS PDRB,real
+2024,Sulawesi Selatan,Berlaku,152048.0,BPS PDRB,real
+2020,Sulawesi Selatan,Konstan,66140.0,BPS PDRB,real
+2021,Sulawesi Selatan,Konstan,70358.0,BPS PDRB,real
+2022,Sulawesi Selatan,Konstan,72163.0,BPS PDRB,real
+2023,Sulawesi Selatan,Konstan,72226.0,BPS PDRB,real
+2024,Sulawesi Selatan,Konstan,75167.0,BPS PDRB,real
+2020,Sulawesi Tenggara,Berlaku,31395.0,BPS PDRB,real
+2021,Sulawesi Tenggara,Berlaku,32925.0,BPS PDRB,real
+2022,Sulawesi Tenggara,Berlaku,36964.0,BPS PDRB,real
+2023,Sulawesi Tenggara,Berlaku,40544.0,BPS PDRB,real
+2024,Sulawesi Tenggara,Berlaku,44495.0,BPS PDRB,real
+2020,Sulawesi Tenggara,Konstan,21728.0,BPS PDRB,real
+2021,Sulawesi Tenggara,Konstan,22247.0,BPS PDRB,real
+2022,Sulawesi Tenggara,Konstan,23755.0,BPS PDRB,real
+2023,Sulawesi Tenggara,Konstan,24780.0,BPS PDRB,real
+2024,Sulawesi Tenggara,Konstan,25735.0,BPS PDRB,real
+2020,Gorontalo,Berlaku,16188.0,BPS PDRB,real
+2021,Gorontalo,Berlaku,17082.0,BPS PDRB,real
+2022,Gorontalo,Berlaku,18073.0,BPS PDRB,real
+2023,Gorontalo,Berlaku,19387.0,BPS PDRB,real
+2024,Gorontalo,Berlaku,20344.0,BPS PDRB,real
+2020,Gorontalo,Konstan,10479.0,BPS PDRB,real
+2021,Gorontalo,Konstan,10664.0,BPS PDRB,real
+2022,Gorontalo,Konstan,10908.0,BPS PDRB,real
+2023,Gorontalo,Konstan,11366.0,BPS PDRB,real
+2024,Gorontalo,Konstan,11719.0,BPS PDRB,real
+2020,Sulawesi Barat,Berlaku,19951.0,BPS PDRB,real
+2021,Sulawesi Barat,Berlaku,22162.0,BPS PDRB,real
+2022,Sulawesi Barat,Berlaku,23914.0,BPS PDRB,real
+2023,Sulawesi Barat,Berlaku,26173.0,BPS PDRB,real
+2024,Sulawesi Barat,Berlaku,29610.0,BPS PDRB,real
+2020,Sulawesi Barat,Konstan,12762.0,BPS PDRB,real
+2021,Sulawesi Barat,Konstan,12910.0,BPS PDRB,real
+2022,Sulawesi Barat,Konstan,13343.0,BPS PDRB,real
+2023,Sulawesi Barat,Konstan,13879.0,BPS PDRB,real
+2024,Sulawesi Barat,Konstan,14543.0,BPS PDRB,real
+2020,Maluku,Berlaku,11103.0,BPS PDRB,real
+2021,Maluku,Berlaku,11281.0,BPS PDRB,real
+2022,Maluku,Berlaku,12651.0,BPS PDRB,real
+2023,Maluku,Berlaku,13950.0,BPS PDRB,real
+2024,Maluku,Berlaku,14781.0,BPS PDRB,real
+2020,Maluku,Konstan,7354.0,BPS PDRB,real
+2021,Maluku,Konstan,7409.0,BPS PDRB,real
+2022,Maluku,Konstan,7833.0,BPS PDRB,real
+2023,Maluku,Konstan,8277.0,BPS PDRB,real
+2024,Maluku,Konstan,8558.0,BPS PDRB,real
+2020,Maluku Utara,Berlaku,8896.0,BPS PDRB,real
+2021,Maluku Utara,Berlaku,9431.0,BPS PDRB,real
+2022,Maluku Utara,Berlaku,10164.0,BPS PDRB,real
+2023,Maluku Utara,Berlaku,10874.0,BPS PDRB,real
+2024,Maluku Utara,Berlaku,11920.0,BPS PDRB,real
+2020,Maluku Utara,Konstan,5595.0,BPS PDRB,real
+2021,Maluku Utara,Konstan,5727.0,BPS PDRB,real
+2022,Maluku Utara,Konstan,5912.0,BPS PDRB,real
+2023,Maluku Utara,Konstan,6163.0,BPS PDRB,real
+2024,Maluku Utara,Konstan,6441.0,BPS PDRB,real
+2020,Papua Barat,Berlaku,9068.0,BPS PDRB,real
+2021,Papua Barat,Berlaku,9342.0,BPS PDRB,real
+2022,Papua Barat,Berlaku,9549.0,BPS PDRB,real
+2023,Papua Barat,Berlaku,5091.0,BPS PDRB,real
+2024,Papua Barat,Berlaku,5124.0,BPS PDRB,real
+2020,Papua Barat,Konstan,6122.0,BPS PDRB,real
+2021,Papua Barat,Konstan,6182.0,BPS PDRB,real
+2022,Papua Barat,Konstan,6199.0,BPS PDRB,real
+2023,Papua Barat,Konstan,3304.0,BPS PDRB,real
+2024,Papua Barat,Konstan,3311.0,BPS PDRB,real
+2020,Papua,Berlaku,24457.0,BPS PDRB,real
+2021,Papua,Berlaku,25516.0,BPS PDRB,real
+2022,Papua,Berlaku,27048.0,BPS PDRB,real
+2023,Papua,Berlaku,11820.0,BPS PDRB,real
+2024,Papua,Berlaku,12107.0,BPS PDRB,real
+2020,Papua,Konstan,16491.0,BPS PDRB,real
+2021,Papua,Konstan,16756.0,BPS PDRB,real
+2022,Papua,Konstan,17136.0,BPS PDRB,real
+2023,Papua,Konstan,7018.0,BPS PDRB,real
+2024,Papua,Konstan,7074.0,BPS PDRB,real
+2015,Aceh,Berlaku,37599.0,BPS PDRB,real
+2016,Aceh,Berlaku,40218.0,BPS PDRB,real
+2017,Aceh,Berlaku,43363.0,BPS PDRB,real
+2018,Aceh,Berlaku,46365.0,BPS PDRB,real
+2019,Aceh,Berlaku,48515.0,BPS PDRB,real
+2015,Aceh,Konstan,31186.0,BPS PDRB,real
+2016,Aceh,Konstan,32355.0,BPS PDRB,real
+2017,Aceh,Konstan,34053.0,BPS PDRB,real
+2018,Aceh,Konstan,35426.0,BPS PDRB,real
+2019,Aceh,Konstan,36681.0,BPS PDRB,real
+2015,Sumatera Utara,Berlaku,125488.0,BPS PDRB,real
+2016,Sumatera Utara,Berlaku,134916.0,BPS PDRB,real
+2017,Sumatera Utara,Berlaku,146369.0,BPS PDRB,real
+2018,Sumatera Utara,Berlaku,155077.0,BPS PDRB,real
+2019,Sumatera Utara,Berlaku,164166.0,BPS PDRB,real
+2015,Sumatera Utara,Konstan,110066.0,BPS PDRB,real
+2016,Sumatera Utara,Konstan,115180.0,BPS PDRB,real
+2017,Sumatera Utara,Konstan,121300.0,BPS PDRB,real
+2018,Sumatera Utara,Konstan,127203.0,BPS PDRB,real
+2019,Sumatera Utara,Konstan,133726.0,BPS PDRB,real
+2015,Sumatera Barat,Berlaku,44425.0,BPS PDRB,real
+2016,Sumatera Barat,Berlaku,47173.0,BPS PDRB,real
+2017,Sumatera Barat,Berlaku,50502.0,BPS PDRB,real
+2018,Sumatera Barat,Berlaku,53436.0,BPS PDRB,real
+2019,Sumatera Barat,Berlaku,54640.0,BPS PDRB,real
+2015,Sumatera Barat,Konstan,33547.0,BPS PDRB,real
+2016,Sumatera Barat,Konstan,34223.0,BPS PDRB,real
+2017,Sumatera Barat,Konstan,35395.0,BPS PDRB,real
+2018,Sumatera Barat,Konstan,36649.0,BPS PDRB,real
+2019,Sumatera Barat,Konstan,37612.0,BPS PDRB,real
+2015,Riau,Berlaku,144219.0,BPS PDRB,real
+2016,Riau,Berlaku,156234.0,BPS PDRB,real
+2017,Riau,Berlaku,165988.0,BPS PDRB,real
+2018,Riau,Berlaku,169703.0,BPS PDRB,real
+2019,Riau,Berlaku,177353.0,BPS PDRB,real
+2015,Riau,Konstan,108969.0,BPS PDRB,real
+2016,Riau,Konstan,113288.0,BPS PDRB,real
+2017,Riau,Konstan,119282.0,BPS PDRB,real
+2018,Riau,Konstan,124600.0,BPS PDRB,real
+2019,Riau,Konstan,129732.0,BPS PDRB,real
+2015,Jambi,Berlaku,43793.0,BPS PDRB,real
+2016,Jambi,Berlaku,51442.0,BPS PDRB,real
+2017,Jambi,Berlaku,56325.0,BPS PDRB,real
+2018,Jambi,Berlaku,57801.0,BPS PDRB,real
+2019,Jambi,Berlaku,59965.0,BPS PDRB,real
+2015,Jambi,Konstan,32846.0,BPS PDRB,real
+2016,Jambi,Konstan,34934.0,BPS PDRB,real
+2017,Jambi,Konstan,36809.0,BPS PDRB,real
+2018,Jambi,Konstan,37979.0,BPS PDRB,real
+2019,Jambi,Konstan,38799.0,BPS PDRB,real
+2015,Sumatera Selatan,Berlaku,56842.0,BPS PDRB,real
+2016,Sumatera Selatan,Berlaku,59090.0,BPS PDRB,real
+2017,Sumatera Selatan,Berlaku,60508.0,BPS PDRB,real
+2018,Sumatera Selatan,Berlaku,62125.0,BPS PDRB,real
+2019,Sumatera Selatan,Berlaku,65521.0,BPS PDRB,real
+2015,Sumatera Selatan,Konstan,48288.0,BPS PDRB,real
+2016,Sumatera Selatan,Konstan,48943.0,BPS PDRB,real
+2017,Sumatera Selatan,Konstan,49519.0,BPS PDRB,real
+2018,Sumatera Selatan,Konstan,50588.0,BPS PDRB,real
+2019,Sumatera Selatan,Konstan,52216.0,BPS PDRB,real
+2015,Bengkulu,Berlaku,15429.0,BPS PDRB,real
+2016,Bengkulu,Berlaku,16538.0,BPS PDRB,real
+2017,Bengkulu,Berlaku,17730.0,BPS PDRB,real
+2018,Bengkulu,Berlaku,19029.0,BPS PDRB,real
+2019,Bengkulu,Berlaku,20305.0,BPS PDRB,real
+2015,Bengkulu,Konstan,11198.0,BPS PDRB,real
+2016,Bengkulu,Konstan,11552.0,BPS PDRB,real
+2017,Bengkulu,Konstan,11929.0,BPS PDRB,real
+2018,Bengkulu,Konstan,12309.0,BPS PDRB,real
+2019,Bengkulu,Konstan,12736.0,BPS PDRB,real
+2015,Lampung,Berlaku,80726.0,BPS PDRB,real
+2016,Lampung,Berlaku,88730.0,BPS PDRB,real
+2017,Lampung,Berlaku,93751.0,BPS PDRB,real
+2018,Lampung,Berlaku,100107.0,BPS PDRB,real
+2019,Lampung,Berlaku,104444.0,BPS PDRB,real
+2015,Lampung,Konstan,63745.0,BPS PDRB,real
+2016,Lampung,Konstan,65731.0,BPS PDRB,real
+2017,Lampung,Konstan,66297.0,BPS PDRB,real
+2018,Lampung,Konstan,66966.0,BPS PDRB,real
+2019,Lampung,Konstan,67861.0,BPS PDRB,real
+2015,Kepulauan Bangka Belitung,Berlaku,12060.0,BPS PDRB,real
+2016,Kepulauan Bangka Belitung,Berlaku,13117.0,BPS PDRB,real
+2017,Kepulauan Bangka Belitung,Berlaku,13143.0,BPS PDRB,real
+2018,Kepulauan Bangka Belitung,Berlaku,13163.0,BPS PDRB,real
+2019,Kepulauan Bangka Belitung,Berlaku,13603.0,BPS PDRB,real
+2015,Kepulauan Bangka Belitung,Konstan,8744.0,BPS PDRB,real
+2016,Kepulauan Bangka Belitung,Konstan,9123.0,BPS PDRB,real
+2017,Kepulauan Bangka Belitung,Konstan,9096.0,BPS PDRB,real
+2018,Kepulauan Bangka Belitung,Konstan,9592.0,BPS PDRB,real
+2019,Kepulauan Bangka Belitung,Konstan,9869.0,BPS PDRB,real
+2015,Kepulauan Riau,Berlaku,7088.0,BPS PDRB,real
+2016,Kepulauan Riau,Berlaku,7729.0,BPS PDRB,real
+2017,Kepulauan Riau,Berlaku,7982.0,BPS PDRB,real
+2018,Kepulauan Riau,Berlaku,8127.0,BPS PDRB,real
+2019,Kepulauan Riau,Berlaku,8250.0,BPS PDRB,real
+2015,Kepulauan Riau,Konstan,5689.0,BPS PDRB,real
+2016,Kepulauan Riau,Konstan,6018.0,BPS PDRB,real
+2017,Kepulauan Riau,Konstan,5946.0,BPS PDRB,real
+2018,Kepulauan Riau,Konstan,5776.0,BPS PDRB,real
+2019,Kepulauan Riau,Konstan,5736.0,BPS PDRB,real
+2015,DKI Jakarta,Berlaku,1864.0,BPS PDRB,real
+2016,DKI Jakarta,Berlaku,1986.0,BPS PDRB,real
+2017,DKI Jakarta,Berlaku,2051.0,BPS PDRB,real
+2018,DKI Jakarta,Berlaku,2125.0,BPS PDRB,real
+2019,DKI Jakarta,Berlaku,2191.0,BPS PDRB,real
+2015,DKI Jakarta,Konstan,1375.0,BPS PDRB,real
+2016,DKI Jakarta,Konstan,1388.0,BPS PDRB,real
+2017,DKI Jakarta,Konstan,1392.0,BPS PDRB,real
+2018,DKI Jakarta,Konstan,1394.0,BPS PDRB,real
+2019,DKI Jakarta,Konstan,1399.0,BPS PDRB,real
+2015,Jawa Barat,Berlaku,132498.0,BPS PDRB,real
+2016,Jawa Barat,Berlaku,146768.0,BPS PDRB,real
+2017,Jawa Barat,Berlaku,152939.0,BPS PDRB,real
+2018,Jawa Barat,Berlaku,170185.0,BPS PDRB,real
+2019,Jawa Barat,Berlaku,186477.0,BPS PDRB,real
+2015,Jawa Barat,Konstan,92803.0,BPS PDRB,real
+2016,Jawa Barat,Konstan,98097.0,BPS PDRB,real
+2017,Jawa Barat,Konstan,99669.0,BPS PDRB,real
+2018,Jawa Barat,Konstan,101777.0,BPS PDRB,real
+2019,Jawa Barat,Konstan,104657.0,BPS PDRB,real
+2015,Jawa Tengah,Berlaku,157202.0,BPS PDRB,real
+2016,Jawa Tengah,Berlaku,164512.0,BPS PDRB,real
+2017,Jawa Tengah,Berlaku,168807.0,BPS PDRB,real
+2018,Jawa Tengah,Berlaku,178359.0,BPS PDRB,real
+2019,Jawa Tengah,Berlaku,184253.0,BPS PDRB,real
+2015,Jawa Tengah,Konstan,113826.0,BPS PDRB,real
+2016,Jawa Tengah,Konstan,116331.0,BPS PDRB,real
+2017,Jawa Tengah,Konstan,118450.0,BPS PDRB,real
+2018,Jawa Tengah,Konstan,121557.0,BPS PDRB,real
+2019,Jawa Tengah,Konstan,123214.0,BPS PDRB,real
+2015,DI Yogyakarta,Berlaku,10794.0,BPS PDRB,real
+2016,DI Yogyakarta,Berlaku,11456.0,BPS PDRB,real
+2017,DI Yogyakarta,Berlaku,11933.0,BPS PDRB,real
+2018,DI Yogyakarta,Berlaku,12708.0,BPS PDRB,real
+2019,DI Yogyakarta,Berlaku,13255.0,BPS PDRB,real
+2015,DI Yogyakarta,Konstan,7668.0,BPS PDRB,real
+2016,DI Yogyakarta,Konstan,7780.0,BPS PDRB,real
+2017,DI Yogyakarta,Konstan,7930.0,BPS PDRB,real
+2018,DI Yogyakarta,Konstan,8101.0,BPS PDRB,real
+2019,DI Yogyakarta,Konstan,8185.0,BPS PDRB,real
+2015,Jawa Timur,Berlaku,230942.0,BPS PDRB,real
+2016,Jawa Timur,Berlaku,249454.0,BPS PDRB,real
+2017,Jawa Timur,Berlaku,258454.0,BPS PDRB,real
+2018,Jawa Timur,Berlaku,260514.0,BPS PDRB,real
+2019,Jawa Timur,Berlaku,268772.0,BPS PDRB,real
+2015,Jawa Timur,Konstan,160889.0,BPS PDRB,real
+2016,Jawa Timur,Konstan,164763.0,BPS PDRB,real
+2017,Jawa Timur,Konstan,167361.0,BPS PDRB,real
+2018,Jawa Timur,Konstan,163861.0,BPS PDRB,real
+2019,Jawa Timur,Konstan,165665.0,BPS PDRB,real
+2015,Banten,Berlaku,28122.0,BPS PDRB,real
+2016,Banten,Berlaku,31185.0,BPS PDRB,real
+2017,Banten,Berlaku,33266.0,BPS PDRB,real
+2018,Banten,Berlaku,35574.0,BPS PDRB,real
+2019,Banten,Berlaku,37022.0,BPS PDRB,real
+2015,Banten,Konstan,20743.0,BPS PDRB,real
+2016,Banten,Konstan,22109.0,BPS PDRB,real
+2017,Banten,Konstan,23056.0,BPS PDRB,real
+2018,Banten,Konstan,23881.0,BPS PDRB,real
+2019,Banten,Konstan,24408.0,BPS PDRB,real
+2015,Bali,Berlaku,25844.0,BPS PDRB,real
+2016,Bali,Berlaku,28144.0,BPS PDRB,real
+2017,Bali,Berlaku,29782.0,BPS PDRB,real
+2018,Bali,Berlaku,32211.0,BPS PDRB,real
+2019,Bali,Berlaku,34175.0,BPS PDRB,real
+2015,Bali,Konstan,18637.0,BPS PDRB,real
+2016,Bali,Konstan,19296.0,BPS PDRB,real
+2017,Bali,Konstan,19822.0,BPS PDRB,real
+2018,Bali,Konstan,20824.0,BPS PDRB,real
+2019,Bali,Konstan,21614.0,BPS PDRB,real
+2015,Nusa Tenggara Barat,Berlaku,22480.0,BPS PDRB,real
+2016,Nusa Tenggara Barat,Berlaku,24662.0,BPS PDRB,real
+2017,Nusa Tenggara Barat,Berlaku,27183.0,BPS PDRB,real
+2018,Nusa Tenggara Barat,Berlaku,29067.0,BPS PDRB,real
+2019,Nusa Tenggara Barat,Berlaku,30369.0,BPS PDRB,real
+2015,Nusa Tenggara Barat,Konstan,18965.0,BPS PDRB,real
+2016,Nusa Tenggara Barat,Konstan,19565.0,BPS PDRB,real
+2017,Nusa Tenggara Barat,Konstan,20843.0,BPS PDRB,real
+2018,Nusa Tenggara Barat,Konstan,21248.0,BPS PDRB,real
+2019,Nusa Tenggara Barat,Konstan,21570.0,BPS PDRB,real
+2015,Nusa Tenggara Timur,Berlaku,22752.0,BPS PDRB,real
+2016,Nusa Tenggara Timur,Berlaku,24309.0,BPS PDRB,real
+2017,Nusa Tenggara Timur,Berlaku,26148.0,BPS PDRB,real
+2018,Nusa Tenggara Timur,Berlaku,28109.0,BPS PDRB,real
+2019,Nusa Tenggara Timur,Berlaku,29930.0,BPS PDRB,real
+2015,Nusa Tenggara Timur,Konstan,16123.0,BPS PDRB,real
+2016,Nusa Tenggara Timur,Konstan,16513.0,BPS PDRB,real
+2017,Nusa Tenggara Timur,Konstan,17329.0,BPS PDRB,real
+2018,Nusa Tenggara Timur,Konstan,17854.0,BPS PDRB,real
+2019,Nusa Tenggara Timur,Konstan,18523.0,BPS PDRB,real
+2015,Kalimantan Barat,Berlaku,30127.0,BPS PDRB,real
+2016,Kalimantan Barat,Berlaku,32628.0,BPS PDRB,real
+2017,Kalimantan Barat,Berlaku,36027.0,BPS PDRB,real
+2018,Kalimantan Barat,Berlaku,39286.0,BPS PDRB,real
+2019,Kalimantan Barat,Berlaku,42854.0,BPS PDRB,real
+2015,Kalimantan Barat,Konstan,25572.0,BPS PDRB,real
+2016,Kalimantan Barat,Konstan,26619.0,BPS PDRB,real
+2017,Kalimantan Barat,Konstan,28358.0,BPS PDRB,real
+2018,Kalimantan Barat,Konstan,30251.0,BPS PDRB,real
+2019,Kalimantan Barat,Konstan,32020.0,BPS PDRB,real
+2015,Kalimantan Tengah,Berlaku,23016.0,BPS PDRB,real
+2016,Kalimantan Tengah,Berlaku,24532.0,BPS PDRB,real
+2017,Kalimantan Tengah,Berlaku,26374.0,BPS PDRB,real
+2018,Kalimantan Tengah,Berlaku,27629.0,BPS PDRB,real
+2019,Kalimantan Tengah,Berlaku,30098.0,BPS PDRB,real
+2015,Kalimantan Tengah,Konstan,17032.0,BPS PDRB,real
+2016,Kalimantan Tengah,Konstan,17686.0,BPS PDRB,real
+2017,Kalimantan Tengah,Konstan,18514.0,BPS PDRB,real
+2018,Kalimantan Tengah,Konstan,19813.0,BPS PDRB,real
+2019,Kalimantan Tengah,Konstan,21186.0,BPS PDRB,real
+2015,Kalimantan Selatan,Berlaku,20559.0,BPS PDRB,real
+2016,Kalimantan Selatan,Berlaku,21794.0,BPS PDRB,real
+2017,Kalimantan Selatan,Berlaku,23171.0,BPS PDRB,real
+2018,Kalimantan Selatan,Berlaku,24470.0,BPS PDRB,real
+2019,Kalimantan Selatan,Berlaku,25953.0,BPS PDRB,real
+2015,Kalimantan Selatan,Konstan,16013.0,BPS PDRB,real
+2016,Kalimantan Selatan,Konstan,16601.0,BPS PDRB,real
+2017,Kalimantan Selatan,Konstan,17280.0,BPS PDRB,real
+2018,Kalimantan Selatan,Konstan,17929.0,BPS PDRB,real
+2019,Kalimantan Selatan,Konstan,18607.0,BPS PDRB,real
+2015,Kalimantan Timur,Berlaku,38979.0,BPS PDRB,real
+2016,Kalimantan Timur,Berlaku,41847.0,BPS PDRB,real
+2017,Kalimantan Timur,Berlaku,47212.0,BPS PDRB,real
+2018,Kalimantan Timur,Berlaku,50288.0,BPS PDRB,real
+2019,Kalimantan Timur,Berlaku,51796.0,BPS PDRB,real
+2015,Kalimantan Timur,Konstan,28507.0,BPS PDRB,real
+2016,Kalimantan Timur,Konstan,28639.0,BPS PDRB,real
+2017,Kalimantan Timur,Konstan,30261.0,BPS PDRB,real
+2018,Kalimantan Timur,Konstan,32119.0,BPS PDRB,real
+2019,Kalimantan Timur,Konstan,33364.0,BPS PDRB,real
+2015,Kalimantan Utara,Berlaku,10599.0,BPS PDRB,real
+2016,Kalimantan Utara,Berlaku,11568.0,BPS PDRB,real
+2017,Kalimantan Utara,Berlaku,12548.0,BPS PDRB,real
+2018,Kalimantan Utara,Berlaku,13797.0,BPS PDRB,real
+2019,Kalimantan Utara,Berlaku,15474.0,BPS PDRB,real
+2015,Kalimantan Utara,Konstan,8574.0,BPS PDRB,real
+2016,Kalimantan Utara,Konstan,9022.0,BPS PDRB,real
+2017,Kalimantan Utara,Konstan,9423.0,BPS PDRB,real
+2018,Kalimantan Utara,Konstan,9984.0,BPS PDRB,real
+2019,Kalimantan Utara,Konstan,10560.0,BPS PDRB,real
+2015,Sulawesi Utara,Berlaku,19769.0,BPS PDRB,real
+2016,Sulawesi Utara,Berlaku,21828.0,BPS PDRB,real
+2017,Sulawesi Utara,Berlaku,23713.0,BPS PDRB,real
+2018,Sulawesi Utara,Berlaku,25051.0,BPS PDRB,real
+2019,Sulawesi Utara,Berlaku,27119.0,BPS PDRB,real
+2015,Sulawesi Utara,Konstan,14606.0,BPS PDRB,real
+2016,Sulawesi Utara,Konstan,15142.0,BPS PDRB,real
+2017,Sulawesi Utara,Konstan,15814.0,BPS PDRB,real
+2018,Sulawesi Utara,Konstan,16375.0,BPS PDRB,real
+2019,Sulawesi Utara,Konstan,17339.0,BPS PDRB,real
+2015,Sulawesi Tengah,Berlaku,33644.0,BPS PDRB,real
+2016,Sulawesi Tengah,Berlaku,35538.0,BPS PDRB,real
+2017,Sulawesi Tengah,Berlaku,38823.0,BPS PDRB,real
+2018,Sulawesi Tengah,Berlaku,41766.0,BPS PDRB,real
+2019,Sulawesi Tengah,Berlaku,43205.0,BPS PDRB,real
+2015,Sulawesi Tengah,Konstan,26298.0,BPS PDRB,real
+2016,Sulawesi Tengah,Konstan,26929.0,BPS PDRB,real
+2017,Sulawesi Tengah,Konstan,28131.0,BPS PDRB,real
+2018,Sulawesi Tengah,Konstan,29346.0,BPS PDRB,real
+2019,Sulawesi Tengah,Konstan,29992.0,BPS PDRB,real
+2015,Sulawesi Selatan,Berlaku,78782.0,BPS PDRB,real
+2016,Sulawesi Selatan,Berlaku,88345.0,BPS PDRB,real
+2017,Sulawesi Selatan,Berlaku,96110.0,BPS PDRB,real
+2018,Sulawesi Selatan,Berlaku,103956.0,BPS PDRB,real
+2019,Sulawesi Selatan,Berlaku,107420.0,BPS PDRB,real
+2015,Sulawesi Selatan,Konstan,54099.0,BPS PDRB,real
+2016,Sulawesi Selatan,Konstan,58351.0,BPS PDRB,real
+2017,Sulawesi Selatan,Konstan,61597.0,BPS PDRB,real
+2018,Sulawesi Selatan,Konstan,64844.0,BPS PDRB,real
+2019,Sulawesi Selatan,Konstan,66659.0,BPS PDRB,real
+2015,Sulawesi Tenggara,Berlaku,21076.0,BPS PDRB,real
+2016,Sulawesi Tenggara,Berlaku,23581.0,BPS PDRB,real
+2017,Sulawesi Tenggara,Berlaku,25869.0,BPS PDRB,real
+2018,Sulawesi Tenggara,Berlaku,28293.0,BPS PDRB,real
+2019,Sulawesi Tenggara,Berlaku,30672.0,BPS PDRB,real
+2015,Sulawesi Tenggara,Konstan,16970.0,BPS PDRB,real
+2016,Sulawesi Tenggara,Konstan,18270.0,BPS PDRB,real
+2017,Sulawesi Tenggara,Konstan,19323.0,BPS PDRB,real
+2018,Sulawesi Tenggara,Konstan,20555.0,BPS PDRB,real
+2019,Sulawesi Tenggara,Konstan,21587.0,BPS PDRB,real
+2015,Gorontalo,Berlaku,10543.0,BPS PDRB,real
+2016,Gorontalo,Berlaku,11799.0,BPS PDRB,real
+2017,Gorontalo,Berlaku,13127.0,BPS PDRB,real
+2018,Gorontalo,Berlaku,14584.0,BPS PDRB,real
+2019,Gorontalo,Berlaku,16022.0,BPS PDRB,real
+2015,Gorontalo,Konstan,8025.0,BPS PDRB,real
+2016,Gorontalo,Konstan,8540.0,BPS PDRB,real
+2017,Gorontalo,Konstan,9314.0,BPS PDRB,real
+2018,Gorontalo,Konstan,10022.0,BPS PDRB,real
+2019,Gorontalo,Konstan,10656.0,BPS PDRB,real
+2015,Sulawesi Barat,Berlaku,13851.0,BPS PDRB,real
+2016,Sulawesi Barat,Berlaku,14908.0,BPS PDRB,real
+2017,Sulawesi Barat,Berlaku,16400.0,BPS PDRB,real
+2018,Sulawesi Barat,Berlaku,18323.0,BPS PDRB,real
+2019,Sulawesi Barat,Berlaku,19179.0,BPS PDRB,real
+2015,Sulawesi Barat,Konstan,10314.0,BPS PDRB,real
+2016,Sulawesi Barat,Konstan,10734.0,BPS PDRB,real
+2017,Sulawesi Barat,Konstan,11433.0,BPS PDRB,real
+2018,Sulawesi Barat,Konstan,12131.0,BPS PDRB,real
+2019,Sulawesi Barat,Konstan,12692.0,BPS PDRB,real
+2015,Maluku,Berlaku,8277.0,BPS PDRB,real
+2016,Maluku,Berlaku,8845.0,BPS PDRB,real
+2017,Maluku,Berlaku,9492.0,BPS PDRB,real
+2018,Maluku,Berlaku,10045.0,BPS PDRB,real
+2019,Maluku,Berlaku,10818.0,BPS PDRB,real
+2015,Maluku,Konstan,5908.0,BPS PDRB,real
+2016,Maluku,Konstan,6188.0,BPS PDRB,real
+2017,Maluku,Konstan,6559.0,BPS PDRB,real
+2018,Maluku,Konstan,6859.0,BPS PDRB,real
+2019,Maluku,Konstan,7256.0,BPS PDRB,real
+2015,Maluku Utara,Berlaku,6617.0,BPS PDRB,real
+2016,Maluku Utara,Berlaku,7276.0,BPS PDRB,real
+2017,Maluku Utara,Berlaku,7728.0,BPS PDRB,real
+2018,Maluku Utara,Berlaku,8247.0,BPS PDRB,real
+2019,Maluku Utara,Berlaku,8704.0,BPS PDRB,real
+2015,Maluku Utara,Konstan,4743.0,BPS PDRB,real
+2016,Maluku Utara,Konstan,4944.0,BPS PDRB,real
+2017,Maluku Utara,Konstan,5100.0,BPS PDRB,real
+2018,Maluku Utara,Konstan,5310.0,BPS PDRB,real
+2019,Maluku Utara,Konstan,5524.0,BPS PDRB,real
+2015,Papua Barat,Berlaku,6834.0,BPS PDRB,real
+2016,Papua Barat,Berlaku,7293.0,BPS PDRB,real
+2017,Papua Barat,Berlaku,7910.0,BPS PDRB,real
+2018,Papua Barat,Berlaku,8329.0,BPS PDRB,real
+2019,Papua Barat,Berlaku,8895.0,BPS PDRB,real
+2015,Papua Barat,Konstan,5483.0,BPS PDRB,real
+2016,Papua Barat,Konstan,5599.0,BPS PDRB,real
+2017,Papua Barat,Konstan,5927.0,BPS PDRB,real
+2018,Papua Barat,Konstan,6057.0,BPS PDRB,real
+2019,Papua Barat,Konstan,6259.0,BPS PDRB,real
+2015,Papua,Berlaku,20004.0,BPS PDRB,real
+2016,Papua,Berlaku,21308.0,BPS PDRB,real
+2017,Papua,Berlaku,22275.0,BPS PDRB,real
+2018,Papua,Berlaku,23720.0,BPS PDRB,real
+2019,Papua,Berlaku,24193.0,BPS PDRB,real
+2015,Papua,Konstan,15193.0,BPS PDRB,real
+2016,Papua,Konstan,15462.0,BPS PDRB,real
+2017,Papua,Konstan,16070.0,BPS PDRB,real
+2018,Papua,Konstan,16577.0,BPS PDRB,real
+2019,Papua,Konstan,16618.0,BPS PDRB,real
+2014,Aceh,Berlaku,34377.0,BPS PDRB,real
+2014,Aceh,Konstan,29691.0,BPS PDRB,real
+2014,Sumatera Utara,Berlaku,121419.0,BPS PDRB,real
+2014,Sumatera Utara,Konstan,104263.0,BPS PDRB,real
+2014,Sumatera Barat,Berlaku,41224.0,BPS PDRB,real
+2014,Sumatera Barat,Konstan,32151.0,BPS PDRB,real
+2014,Riau,Berlaku,133550.0,BPS PDRB,real
+2014,Riau,Konstan,108498.0,BPS PDRB,real
+2014,Jambi,Berlaku,37968.0,BPS PDRB,real
+2014,Jambi,Konstan,31145.0,BPS PDRB,real
+2014,Sumatera Selatan,Berlaku,54406.0,BPS PDRB,real
+2014,Sumatera Selatan,Konstan,46612.0,BPS PDRB,real
+2014,Bengkulu,Berlaku,14272.0,BPS PDRB,real
+2014,Bengkulu,Konstan,10950.0,BPS PDRB,real
+2014,Lampung,Berlaku,75444.0,BPS PDRB,real
+2014,Lampung,Konstan,61595.0,BPS PDRB,real
+2014,Kepulauan Bangka Belitung,Berlaku,10837.0,BPS PDRB,real
+2014,Kepulauan Bangka Belitung,Konstan,8254.0,BPS PDRB,real
+2014,Kepulauan Riau,Berlaku,6450.0,BPS PDRB,real
+2014,Kepulauan Riau,Konstan,5378.0,BPS PDRB,real
+2014,DKI Jakarta,Berlaku,1719.0,BPS PDRB,real
+2014,DKI Jakarta,Konstan,1360.0,BPS PDRB,real
+2014,Jawa Barat,Berlaku,120787.0,BPS PDRB,real
+2014,Jawa Barat,Konstan,92654.0,BPS PDRB,real
+2014,Jawa Tengah,Berlaku,140435.0,BPS PDRB,real
+2014,Jawa Tengah,Konstan,107793.0,BPS PDRB,real
+2014,DI Yogyakarta,Berlaku,9769.0,BPS PDRB,real
+2014,DI Yogyakarta,Konstan,7509.0,BPS PDRB,real
+2014,Jawa Timur,Berlaku,208614.0,BPS PDRB,real
+2014,Jawa Timur,Konstan,155784.0,BPS PDRB,real
+2014,Banten,Berlaku,24944.0,BPS PDRB,real
+2014,Banten,Konstan,19457.0,BPS PDRB,real
+2014,Bali,Berlaku,22912.0,BPS PDRB,real
+2014,Bali,Konstan,18151.0,BPS PDRB,real
+2014,Nusa Tenggara Barat,Berlaku,19468.0,BPS PDRB,real
+2014,Nusa Tenggara Barat,Konstan,17702.0,BPS PDRB,real
+2014,Nusa Tenggara Timur,Berlaku,20456.0,BPS PDRB,real
+2014,Nusa Tenggara Timur,Konstan,15614.0,BPS PDRB,real
+2014,Kalimantan Barat,Berlaku,28529.0,BPS PDRB,real
+2014,Kalimantan Barat,Konstan,24967.0,BPS PDRB,real
+2014,Kalimantan Tengah,Berlaku,21181.0,BPS PDRB,real
+2014,Kalimantan Tengah,Konstan,16080.0,BPS PDRB,real
+2014,Kalimantan Selatan,Berlaku,18753.0,BPS PDRB,real
+2014,Kalimantan Selatan,Konstan,15636.0,BPS PDRB,real
+2014,Kalimantan Timur,Berlaku,36948.0,BPS PDRB,real
+2014,Kalimantan Timur,Konstan,27267.0,BPS PDRB,real
+2014,Kalimantan Utara,Berlaku,10121.0,BPS PDRB,real
+2014,Kalimantan Utara,Konstan,8021.0,BPS PDRB,real
+2014,Sulawesi Utara,Berlaku,17800.0,BPS PDRB,real
+2014,Sulawesi Utara,Konstan,14243.0,BPS PDRB,real
+2014,Sulawesi Tengah,Berlaku,31036.0,BPS PDRB,real
+2014,Sulawesi Tengah,Konstan,24729.0,BPS PDRB,real
+2014,Sulawesi Selatan,Berlaku,68465.0,BPS PDRB,real
+2014,Sulawesi Selatan,Konstan,51102.0,BPS PDRB,real
+2014,Sulawesi Tenggara,Berlaku,20198.0,BPS PDRB,real
+2014,Sulawesi Tenggara,Konstan,16952.0,BPS PDRB,real
+2014,Gorontalo,Berlaku,9512.0,BPS PDRB,real
+2014,Gorontalo,Konstan,7698.0,BPS PDRB,real
+2014,Sulawesi Barat,Berlaku,12301.0,BPS PDRB,real
+2014,Sulawesi Barat,Konstan,9753.0,BPS PDRB,real
+2014,Maluku,Berlaku,7909.0,BPS PDRB,real
+2014,Maluku,Konstan,5835.0,BPS PDRB,real
+2014,Maluku Utara,Berlaku,6196.0,BPS PDRB,real
+2014,Maluku Utara,Konstan,4663.0,BPS PDRB,real
+2014,Papua Barat,Berlaku,6273.0,BPS PDRB,real
+2014,Papua Barat,Konstan,5344.0,BPS PDRB,real
+2014,Papua,Berlaku,17357.0,BPS PDRB,real
+2014,Papua,Konstan,14433.0,BPS PDRB,real
