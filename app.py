@@ -208,8 +208,9 @@ def main():
     st.divider()
 
     # ---------- Tabs ----------
-    tabs = st.tabs(["Ringkasan", "Kredit", "Ekspor", "Impor", "Analytics",
-                    "NTP Petani", "Produksi Pangan", "Data Mentah", "Sumber Data"])
+    tabs = st.tabs(["Ringkasan", "Kredit", "Ekspor", "Impor", "Neraca Perdagangan",
+                    "Analytics", "NTP Petani", "Produksi Pangan",
+                    "Perbandingan Provinsi", "Data Mentah", "Sumber Data"])
 
     # ===== TAB: RINGKASAN =====
     with tabs[0]:
@@ -268,6 +269,64 @@ def main():
                          title="Impor (Juta USD)", color_discrete_sequence=["#D32F2F"])
             fig.update_layout(height=400)
             st.plotly_chart(fig, use_container_width=True)
+
+        # ----- Top Mover Section -----
+        st.subheader("Top Mover — Perubahan YoY Tahun Terakhir")
+        st.caption("Perubahan Year-over-Year (%) pada tahun terakhir yang tersedia.")
+        col_tm1, col_tm2 = st.columns(2)
+
+        with col_tm1:
+            kr_yoy = (kr_f[kr_f["jenis_kredit"] == "Total"]
+                      .groupby(["tahun", "provinsi"])["nilai_miliar_rp"].sum().reset_index())
+            kr_years_sorted = sorted(kr_yoy["tahun"].unique())
+            if len(kr_years_sorted) >= 2:
+                last_yr_kr = kr_years_sorted[-1]
+                prev_yr_kr = kr_years_sorted[-2]
+                kr_last = kr_yoy[kr_yoy["tahun"] == last_yr_kr][["provinsi", "nilai_miliar_rp"]].rename(columns={"nilai_miliar_rp": "curr"})
+                kr_prev = kr_yoy[kr_yoy["tahun"] == prev_yr_kr][["provinsi", "nilai_miliar_rp"]].rename(columns={"nilai_miliar_rp": "prev"})
+                kr_change = pd.merge(kr_last, kr_prev, on="provinsi")
+                kr_change["yoy_pct"] = ((kr_change["curr"] - kr_change["prev"]) / kr_change["prev"].replace(0, float("nan"))) * 100
+                kr_change = kr_change.dropna(subset=["yoy_pct"]).sort_values("yoy_pct")
+                if not kr_change.empty:
+                    fig_tm_kr = px.bar(
+                        kr_change, x="yoy_pct", y="provinsi", orientation="h",
+                        title=f"YoY Kredit {prev_yr_kr}→{last_yr_kr} (%)",
+                        color="yoy_pct",
+                        color_continuous_scale="RdYlGn",
+                        color_continuous_midpoint=0,
+                    )
+                    fig_tm_kr.update_layout(height=max(400, len(kr_change) * 18), coloraxis_showscale=False)
+                    st.plotly_chart(fig_tm_kr, use_container_width=True)
+                else:
+                    st.info("Data YoY kredit tidak tersedia.")
+            else:
+                st.info("Butuh minimal 2 tahun data kredit untuk YoY.")
+
+        with col_tm2:
+            ek_yoy = (ek_f.groupby(["tahun", "provinsi"])["nilai_juta_usd"].sum().reset_index())
+            ek_years_sorted = sorted(ek_yoy["tahun"].unique())
+            if len(ek_years_sorted) >= 2:
+                last_yr_ek = ek_years_sorted[-1]
+                prev_yr_ek = ek_years_sorted[-2]
+                ek_last = ek_yoy[ek_yoy["tahun"] == last_yr_ek][["provinsi", "nilai_juta_usd"]].rename(columns={"nilai_juta_usd": "curr"})
+                ek_prev = ek_yoy[ek_yoy["tahun"] == prev_yr_ek][["provinsi", "nilai_juta_usd"]].rename(columns={"nilai_juta_usd": "prev"})
+                ek_change = pd.merge(ek_last, ek_prev, on="provinsi")
+                ek_change["yoy_pct"] = ((ek_change["curr"] - ek_change["prev"]) / ek_change["prev"].replace(0, float("nan"))) * 100
+                ek_change = ek_change.dropna(subset=["yoy_pct"]).sort_values("yoy_pct")
+                if not ek_change.empty:
+                    fig_tm_ek = px.bar(
+                        ek_change, x="yoy_pct", y="provinsi", orientation="h",
+                        title=f"YoY Ekspor {prev_yr_ek}→{last_yr_ek} (%)",
+                        color="yoy_pct",
+                        color_continuous_scale="RdYlGn",
+                        color_continuous_midpoint=0,
+                    )
+                    fig_tm_ek.update_layout(height=max(400, len(ek_change) * 18), coloraxis_showscale=False)
+                    st.plotly_chart(fig_tm_ek, use_container_width=True)
+                else:
+                    st.info("Data YoY ekspor tidak tersedia.")
+            else:
+                st.info("Butuh minimal 2 tahun data ekspor untuk YoY.")
 
     # ===== TAB: KREDIT =====
     with tabs[1]:
@@ -333,6 +392,15 @@ def main():
                 fig.update_layout(height=350)
                 st.plotly_chart(fig, use_container_width=True)
 
+            st.divider()
+            st.download_button(
+                "Unduh CSV Kredit (filtered)",
+                kr_f.to_csv(index=False).encode("utf-8"),
+                file_name="kredit_filtered.csv",
+                mime="text/csv",
+                key="dl_kredit",
+            )
+
     # ===== TAB: EKSPOR =====
     with tabs[2]:
         st.subheader("Ekspor Sektor Pertanian per Provinsi")
@@ -396,6 +464,15 @@ def main():
                               markers=True, title=f"Total Tahunan ({value_label})")
                 fig.update_layout(height=350)
                 st.plotly_chart(fig, use_container_width=True)
+
+            st.divider()
+            st.download_button(
+                "Unduh CSV Ekspor (filtered)",
+                ek_f.to_csv(index=False).encode("utf-8"),
+                file_name="ekspor_filtered.csv",
+                mime="text/csv",
+                key="dl_ekspor",
+            )
 
     # ===== TAB: IMPOR =====
     with tabs[3]:
@@ -467,8 +544,108 @@ def main():
                 fig.update_layout(height=350)
                 st.plotly_chart(fig, use_container_width=True)
 
-    # ===== TAB: ANALYTICS =====
+            st.divider()
+            st.download_button(
+                "Unduh CSV Impor (filtered)",
+                im_f.to_csv(index=False).encode("utf-8"),
+                file_name="impor_filtered.csv",
+                mime="text/csv",
+                key="dl_impor",
+            )
+
+    # ===== TAB: NERACA PERDAGANGAN =====
     with tabs[4]:
+        st.subheader("Neraca Perdagangan Pertanian")
+        st.warning("Data impor hanya tersedia 2023-2024. Analisis neraca terbatas pada tahun tersebut.")
+
+        # KPI row
+        total_ek_val = ek_f["nilai_juta_usd"].sum()
+        total_im_val = im_f["nilai_juta_usd"].sum()
+        neraca_surplus = total_ek_val - total_im_val
+        kn1, kn2, kn3 = st.columns(3)
+        kn1.metric("Total Ekspor (filter)", _fmt_usd(total_ek_val))
+        kn2.metric("Total Impor (filter)", _fmt_usd(total_im_val))
+        kn3.metric("Surplus / Defisit", _fmt_usd(neraca_surplus))
+
+        st.divider()
+
+        # Bar chart: ekspor vs impor per tahun with balance line
+        st.markdown("### Ekspor vs Impor per Tahun")
+        ek_yr = (ek_f.groupby("tahun")["nilai_juta_usd"].sum().reset_index()
+                 .rename(columns={"nilai_juta_usd": "Ekspor"}))
+        im_yr = (im_f.groupby("tahun")["nilai_juta_usd"].sum().reset_index()
+                 .rename(columns={"nilai_juta_usd": "Impor"}))
+        neraca_yr = pd.merge(ek_yr, im_yr, on="tahun", how="outer").fillna(0)
+        neraca_yr["Neraca"] = neraca_yr["Ekspor"] - neraca_yr["Impor"]
+        neraca_long = neraca_yr.melt(id_vars="tahun", value_vars=["Ekspor", "Impor"],
+                                      var_name="Jenis", value_name="Nilai")
+        if not neraca_long.empty:
+            fig_neraca = px.bar(
+                neraca_long, x="tahun", y="Nilai", color="Jenis",
+                barmode="group",
+                color_discrete_map={"Ekspor": "#1976D2", "Impor": "#D32F2F"},
+                labels={"Nilai": "Juta USD", "tahun": "Tahun"},
+                title="Ekspor vs Impor per Tahun (Juta USD)",
+            )
+            # Add line for balance
+            fig_neraca.add_scatter(
+                x=neraca_yr["tahun"], y=neraca_yr["Neraca"],
+                mode="lines+markers", name="Neraca",
+                line=dict(color="#FF9800", width=2, dash="dot"),
+            )
+            fig_neraca.update_layout(height=420)
+            st.plotly_chart(fig_neraca, use_container_width=True)
+        else:
+            st.info("Tidak ada data ekspor/impor untuk filter ini.")
+
+        st.divider()
+
+        # Heatmap: pivot ekspor-impor per province (overlapping years)
+        st.markdown("### Neraca per Provinsi (Tahun Overlap: 2023-2024)")
+        overlap_years = sorted(set(ek_f["tahun"]) & set(im_f["tahun"]))
+        if overlap_years:
+            ek_ovlp = (ek_f[ek_f["tahun"].isin(overlap_years)]
+                       .groupby("provinsi")["nilai_juta_usd"].sum()
+                       .reset_index().rename(columns={"nilai_juta_usd": "ekspor_juta_usd"}))
+            im_ovlp = (im_f[im_f["tahun"].isin(overlap_years)]
+                       .groupby("provinsi")["nilai_juta_usd"].sum()
+                       .reset_index().rename(columns={"nilai_juta_usd": "impor_juta_usd"}))
+            neraca_prov = pd.merge(ek_ovlp, im_ovlp, on="provinsi", how="outer").fillna(0)
+            neraca_prov["surplus_juta_usd"] = neraca_prov["ekspor_juta_usd"] - neraca_prov["impor_juta_usd"]
+            neraca_prov = neraca_prov.sort_values("surplus_juta_usd", ascending=False)
+
+            col_n1, col_n2 = st.columns([2, 1])
+            with col_n1:
+                neraca_prov_long = neraca_prov.melt(
+                    id_vars="provinsi",
+                    value_vars=["ekspor_juta_usd", "impor_juta_usd"],
+                    var_name="Jenis", value_name="Nilai",
+                )
+                neraca_prov_long["Jenis"] = neraca_prov_long["Jenis"].map(
+                    {"ekspor_juta_usd": "Ekspor", "impor_juta_usd": "Impor"}
+                )
+                fig_heat_prov = px.bar(
+                    neraca_prov_long,
+                    x="Nilai", y="provinsi", color="Jenis",
+                    barmode="group", orientation="h",
+                    color_discrete_map={"Ekspor": "#1976D2", "Impor": "#D32F2F"},
+                    title=f"Ekspor vs Impor per Provinsi ({', '.join(str(y) for y in overlap_years)})",
+                    labels={"Nilai": "Juta USD", "provinsi": "Provinsi"},
+                )
+                fig_heat_prov.update_layout(height=max(500, len(neraca_prov) * 22))
+                st.plotly_chart(fig_heat_prov, use_container_width=True)
+
+            with col_n2:
+                st.markdown("#### Ranking Surplus/Defisit")
+                surplus_display = neraca_prov[["provinsi", "surplus_juta_usd"]].copy()
+                surplus_display["surplus_juta_usd"] = surplus_display["surplus_juta_usd"].round(2)
+                surplus_display.columns = ["Provinsi", "Surplus (Juta USD)"]
+                st.dataframe(surplus_display, use_container_width=True, hide_index=True, height=500)
+        else:
+            st.info("Tidak ada tahun overlap antara ekspor dan impor pada filter ini.")
+
+    # ===== TAB: ANALYTICS =====
+    with tabs[5]:
         from src.analytics import (compute_cagr, compute_correlation,
                                      pearson_corr, per_province_timeseries)
         st.subheader("Analytics — CAGR & Korelasi")
@@ -732,8 +909,208 @@ def main():
                 fig.update_layout(height=400, showlegend=False)
                 st.plotly_chart(fig, use_container_width=True)
 
+        st.markdown("---")
+
+        # ----- YoY Growth Rate Section -----
+        st.markdown("### YoY Growth Rate per Provinsi")
+        st.caption("Pertumbuhan Year-over-Year (%) untuk tahun yang dipilih.")
+        c_yoy1, c_yoy2, c_yoy3 = st.columns([1, 1, 2])
+        with c_yoy1:
+            yoy_indicator = st.selectbox(
+                "Indikator", ["Kredit", "Ekspor", "Impor"], key="analytics_yoy_indicator"
+            )
+        if yoy_indicator == "Kredit":
+            yoy_src = (kr_f[kr_f["jenis_kredit"] == "Total"]
+                       .groupby(["tahun", "provinsi"])["nilai_miliar_rp"].sum().reset_index()
+                       .rename(columns={"nilai_miliar_rp": "nilai"}))
+        elif yoy_indicator == "Ekspor":
+            yoy_src = (ek_f.groupby(["tahun", "provinsi"])["nilai_juta_usd"].sum().reset_index()
+                       .rename(columns={"nilai_juta_usd": "nilai"}))
+        else:
+            yoy_src = (im_f.groupby(["tahun", "provinsi"])["nilai_juta_usd"].sum().reset_index()
+                       .rename(columns={"nilai_juta_usd": "nilai"}))
+
+        yoy_years_avail = sorted(yoy_src["tahun"].unique())
+        if len(yoy_years_avail) < 2:
+            st.info("Butuh minimal 2 tahun data untuk hitung YoY.")
+        else:
+            with c_yoy2:
+                yoy_year_sel = st.selectbox(
+                    "Tahun", yoy_years_avail[1:], index=len(yoy_years_avail) - 2, key="analytics_yoy_year"
+                )
+            yoy_curr = yoy_src[yoy_src["tahun"] == yoy_year_sel][["provinsi", "nilai"]].rename(columns={"nilai": "curr"})
+            yoy_prev_yr = yoy_years_avail[yoy_years_avail.index(yoy_year_sel) - 1]
+            yoy_prev = yoy_src[yoy_src["tahun"] == yoy_prev_yr][["provinsi", "nilai"]].rename(columns={"nilai": "prev"})
+            yoy_merged = pd.merge(yoy_curr, yoy_prev, on="provinsi")
+            yoy_merged["yoy_pct"] = ((yoy_merged["curr"] - yoy_merged["prev"]) / yoy_merged["prev"].replace(0, float("nan"))) * 100
+            yoy_merged = yoy_merged.dropna(subset=["yoy_pct"]).sort_values("yoy_pct")
+            if yoy_merged.empty:
+                st.info("Tidak ada data YoY untuk pilihan ini.")
+            else:
+                fig_yoy = px.bar(
+                    yoy_merged, x="yoy_pct", y="provinsi", orientation="h",
+                    title=f"YoY Growth {yoy_indicator} {yoy_prev_yr}→{yoy_year_sel} (%)",
+                    color="yoy_pct",
+                    color_continuous_scale="RdYlGn",
+                    color_continuous_midpoint=0,
+                )
+                fig_yoy.update_layout(height=max(400, len(yoy_merged) * 18), coloraxis_showscale=False)
+                st.plotly_chart(fig_yoy, use_container_width=True)
+
+        st.markdown("---")
+
+        # ----- Bubble Chart: Produksi vs Ekspor vs Kredit -----
+        st.markdown("### Bubble Chart: Produksi Padi vs Ekspor vs Kredit")
+        st.caption("X = rata-rata produksi padi (ton), Y = rata-rata ekspor (Juta USD), ukuran gelembung = rata-rata kredit (Rp Miliar).")
+        if produksi is None or produksi.empty or ek_f.empty or kr_f.empty:
+            st.info("Butuh data produksi, ekspor, dan kredit untuk bubble chart.")
+        else:
+            prod_padi = (produksi[produksi["komoditas"] == "Padi"]
+                         .groupby("provinsi")["produksi_ton"].mean().reset_index()
+                         .rename(columns={"produksi_ton": "avg_produksi_ton"}))
+            ek_avg = (ek_f.groupby("provinsi")["nilai_juta_usd"].mean().reset_index()
+                      .rename(columns={"nilai_juta_usd": "avg_ekspor_juta_usd"}))
+            kr_avg = (kr_f[kr_f["jenis_kredit"] == "Total"]
+                      .groupby("provinsi")["nilai_miliar_rp"].mean().reset_index()
+                      .rename(columns={"nilai_miliar_rp": "avg_kredit_miliar"}))
+            bubble_df = prod_padi.merge(ek_avg, on="provinsi").merge(kr_avg, on="provinsi")
+            if bubble_df.empty:
+                st.info("Tidak ada data overlap untuk bubble chart.")
+            else:
+                fig_bubble = px.scatter(
+                    bubble_df,
+                    x="avg_produksi_ton", y="avg_ekspor_juta_usd",
+                    size="avg_kredit_miliar", text="provinsi",
+                    labels={
+                        "avg_produksi_ton": "Rata-rata Produksi Padi (ton)",
+                        "avg_ekspor_juta_usd": "Rata-rata Ekspor (Juta USD)",
+                        "avg_kredit_miliar": "Rata-rata Kredit (Rp Miliar)",
+                    },
+                    title="Produksi Padi vs Ekspor vs Kredit per Provinsi",
+                    size_max=60,
+                )
+                fig_bubble.update_traces(textposition="top center", textfont_size=9)
+                fig_bubble.update_layout(height=550)
+                st.plotly_chart(fig_bubble, use_container_width=True)
+
+        st.markdown("---")
+
+        # ----- NTP vs Produksi Correlation -----
+        st.markdown("### Korelasi NTP vs Produksi Padi")
+        st.caption("Apakah NTP petani lebih tinggi berkorelasi dengan produksi padi lebih besar?")
+        if ntp is None or ntp.empty or produksi is None or produksi.empty:
+            st.info("Butuh data NTP dan produksi untuk analisis ini.")
+        else:
+            ntp_avg = (ntp.groupby("provinsi")["ntp"].mean().reset_index()
+                       .rename(columns={"ntp": "avg_ntp"}))
+            prod_padi_avg = (produksi[produksi["komoditas"] == "Padi"]
+                             .groupby("provinsi")["produksi_ton"].mean().reset_index()
+                             .rename(columns={"produksi_ton": "avg_produksi_ton"}))
+            ntp_prod_df = pd.merge(ntp_avg, prod_padi_avg, on="provinsi")
+            if len(ntp_prod_df) < 3:
+                st.info("Data tidak cukup untuk korelasi NTP vs produksi.")
+            else:
+                r_ntp_prod = ntp_prod_df["avg_ntp"].corr(ntp_prod_df["avg_produksi_ton"])
+                col_np1, col_np2 = st.columns([3, 1])
+                with col_np1:
+                    fig_ntp_prod = px.scatter(
+                        ntp_prod_df,
+                        x="avg_ntp", y="avg_produksi_ton",
+                        text="provinsi", trendline="ols",
+                        labels={
+                            "avg_ntp": "Rata-rata NTP (2018=100)",
+                            "avg_produksi_ton": "Rata-rata Produksi Padi (ton)",
+                        },
+                        title=f"NTP vs Produksi Padi — Pearson r = {r_ntp_prod:.3f}" if not pd.isna(r_ntp_prod) else "NTP vs Produksi Padi",
+                    )
+                    fig_ntp_prod.update_traces(textposition="top center", textfont_size=9)
+                    fig_ntp_prod.update_layout(height=500)
+                    st.plotly_chart(fig_ntp_prod, use_container_width=True)
+                with col_np2:
+                    st.metric("Pearson r", f"{r_ntp_prod:.3f}" if not pd.isna(r_ntp_prod) else "—")
+                    if not pd.isna(r_ntp_prod):
+                        if abs(r_ntp_prod) > 0.7:
+                            st.success("Korelasi kuat")
+                        elif abs(r_ntp_prod) > 0.4:
+                            st.info("Korelasi sedang")
+                        else:
+                            st.warning("Korelasi lemah")
+
+        st.markdown("---")
+
+        # ----- Proyeksi Sederhana (Linear) -----
+        import numpy as np
+        st.markdown("### Proyeksi Sederhana (Linear 3 Tahun ke Depan)")
+        st.caption("⚠️ Proyeksi linear sederhana, bukan model ekonometrik. Gunakan sebagai estimasi awal saja.")
+
+        c_proj1, c_proj2 = st.columns(2)
+        with c_proj1:
+            proj_indicator = st.selectbox(
+                "Indikator", ["Kredit", "Ekspor", "NTP", "Produksi Padi"], key="analytics_proj_indicator"
+            )
+        if proj_indicator == "Kredit":
+            proj_src = (kr_f[kr_f["jenis_kredit"] == "Total"]
+                        .groupby(["tahun", "provinsi"])["nilai_miliar_rp"].sum().reset_index()
+                        .rename(columns={"nilai_miliar_rp": "nilai"}))
+            proj_unit = "Rp Miliar"
+        elif proj_indicator == "Ekspor":
+            proj_src = (ek_f.groupby(["tahun", "provinsi"])["nilai_juta_usd"].sum().reset_index()
+                        .rename(columns={"nilai_juta_usd": "nilai"}))
+            proj_unit = "Juta USD"
+        elif proj_indicator == "NTP":
+            if ntp is None or ntp.empty:
+                proj_src = pd.DataFrame()
+            else:
+                proj_src = ntp[["tahun", "provinsi", "ntp"]].rename(columns={"ntp": "nilai"}).copy()
+            proj_unit = "NTP (2018=100)"
+        else:
+            if produksi is None or produksi.empty:
+                proj_src = pd.DataFrame()
+            else:
+                proj_src = (produksi[produksi["komoditas"] == "Padi"]
+                            .groupby(["tahun", "provinsi"])["produksi_ton"].sum().reset_index()
+                            .rename(columns={"produksi_ton": "nilai"}))
+            proj_unit = "ton"
+
+        if proj_src is None or proj_src.empty:
+            st.info(f"Data {proj_indicator} tidak tersedia.")
+        else:
+            proj_provs = sorted(proj_src["provinsi"].unique())
+            with c_proj2:
+                proj_prov_sel = st.selectbox(
+                    "Provinsi", proj_provs,
+                    index=proj_provs.index("Jawa Barat") if "Jawa Barat" in proj_provs else 0,
+                    key="analytics_proj_prov",
+                )
+            proj_prov_data = proj_src[proj_src["provinsi"] == proj_prov_sel].sort_values("tahun")
+            if len(proj_prov_data) < 2:
+                st.info("Butuh minimal 2 data poin untuk proyeksi.")
+            else:
+                x_hist = proj_prov_data["tahun"].values.astype(float)
+                y_hist = proj_prov_data["nilai"].values.astype(float)
+                coef = np.polyfit(x_hist, y_hist, 1)
+                poly = np.poly1d(coef)
+                last_yr_proj = int(x_hist[-1])
+                proj_years = [last_yr_proj + 1, last_yr_proj + 2, last_yr_proj + 3]
+                proj_values = [float(poly(y)) for y in proj_years]
+                hist_df = pd.DataFrame({"tahun": x_hist.astype(int), "nilai": y_hist, "tipe": "Historis"})
+                proj_df = pd.DataFrame({"tahun": proj_years, "nilai": proj_values, "tipe": "Proyeksi"})
+                combined_df = pd.concat([hist_df, proj_df], ignore_index=True)
+                fig_proj = px.line(
+                    combined_df, x="tahun", y="nilai", color="tipe",
+                    markers=True,
+                    color_discrete_map={"Historis": "#1976D2", "Proyeksi": "#FF9800"},
+                    labels={"nilai": proj_unit, "tahun": "Tahun", "tipe": ""},
+                    title=f"Proyeksi {proj_indicator} — {proj_prov_sel} (Linear)",
+                    line_dash="tipe",
+                    line_dash_map={"Historis": "solid", "Proyeksi": "dash"},
+                )
+                fig_proj.update_layout(height=420)
+                st.plotly_chart(fig_proj, use_container_width=True)
+                st.caption("Proyeksi linear sederhana, bukan model ekonometrik.")
+
     # ===== TAB: NTP PETANI =====
-    with tabs[5]:
+    with tabs[6]:
         st.subheader("Nilai Tukar Petani (NTP) per Provinsi")
         st.caption(
             "NTP = Indeks Harga yang Diterima Petani / Indeks Harga yang Dibayar Petani × 100. "
@@ -841,8 +1218,17 @@ def main():
                 ntp_nat[col] = ntp_nat[col].round(2)
             st.dataframe(ntp_nat, use_container_width=True, hide_index=True)
 
+            st.divider()
+            st.download_button(
+                "Unduh CSV NTP",
+                ntp.to_csv(index=False).encode("utf-8"),
+                file_name="ntp_petani.csv",
+                mime="text/csv",
+                key="dl_ntp",
+            )
+
     # ===== TAB: PRODUKSI PANGAN =====
-    with tabs[6]:
+    with tabs[7]:
         st.subheader("Produksi Tanaman Pangan per Provinsi")
         st.caption(
             "Data produksi padi (2018–2024) dan jagung (2020–2024) per provinsi. "
@@ -953,22 +1339,254 @@ def main():
                 fig_nat.update_layout(height=380)
                 st.plotly_chart(fig_nat, use_container_width=True)
 
+            st.divider()
+            st.download_button(
+                "Unduh CSV Produksi Pangan",
+                produksi.to_csv(index=False).encode("utf-8"),
+                file_name="produksi_pangan.csv",
+                mime="text/csv",
+                key="dl_produksi",
+            )
+
+    # ===== TAB: PERBANDINGAN PROVINSI =====
+    with tabs[8]:
+        st.subheader("Perbandingan Provinsi — Multi-Indikator")
+        st.caption("Bandingkan 2–5 provinsi secara bersamaan di 5 indikator utama.")
+
+        # Default: top 5 provinsi berdasarkan kredit
+        if not kr_f.empty:
+            top5_default = (kr_f[kr_f["jenis_kredit"] == "Total"]
+                            .groupby("provinsi")["nilai_miliar_rp"].sum()
+                            .nlargest(5).index.tolist())
+        else:
+            top5_default = []
+
+        all_provs_cmp = sorted(
+            set(kr_f["provinsi"]) | set(ek_f["provinsi"])
+            | set((ntp["provinsi"] if ntp is not None and not ntp.empty else pd.Series([], dtype=str)))
+            | set((produksi["provinsi"] if produksi is not None and not produksi.empty else pd.Series([], dtype=str)))
+            | set((pdrb["provinsi"] if pdrb is not None and not pdrb.empty else pd.Series([], dtype=str)))
+        )
+        sel_cmp_provs = st.multiselect(
+            "Pilih provinsi (2–5)",
+            all_provs_cmp,
+            default=[p for p in top5_default if p in all_provs_cmp],
+            key="cmp_provs",
+        )
+
+        if len(sel_cmp_provs) < 2:
+            st.info("Pilih minimal 2 provinsi untuk perbandingan.")
+        else:
+            if len(sel_cmp_provs) > 5:
+                st.warning("Maksimal 5 provinsi. Menampilkan 5 pertama.")
+                sel_cmp_provs = sel_cmp_provs[:5]
+
+            # Get latest year for each indicator
+            latest_kr_yr = int(kr_f["tahun"].max()) if not kr_f.empty else None
+            latest_ek_yr = int(ek_f["tahun"].max()) if not ek_f.empty else None
+            latest_ntp_yr = int(ntp["tahun"].max()) if ntp is not None and not ntp.empty else None
+            latest_prod_yr = int(produksi["tahun"].max()) if produksi is not None and not produksi.empty else None
+            latest_pdrb_yr = int(pdrb["tahun"].max()) if pdrb is not None and not pdrb.empty else None
+
+            st.markdown("### Grouped Bar Charts per Indikator")
+
+            # 1. Kredit
+            if not kr_f.empty:
+                kr_cmp = (kr_f[(kr_f["jenis_kredit"] == "Total") & (kr_f["provinsi"].isin(sel_cmp_provs))]
+                          .groupby(["provinsi", "tahun"])["nilai_miliar_rp"].sum().reset_index())
+                if not kr_cmp.empty:
+                    fig_kr_cmp = px.bar(
+                        kr_cmp, x="provinsi", y="nilai_miliar_rp", color="tahun",
+                        barmode="group",
+                        title="Kredit per Provinsi (Rp Miliar)",
+                        labels={"nilai_miliar_rp": "Rp Miliar", "provinsi": "Provinsi", "tahun": "Tahun"},
+                        color_continuous_scale="Blues",
+                    )
+                    fig_kr_cmp.update_layout(height=400)
+                    st.plotly_chart(fig_kr_cmp, use_container_width=True)
+
+            # 2. Ekspor
+            if not ek_f.empty:
+                ek_cmp = (ek_f[ek_f["provinsi"].isin(sel_cmp_provs)]
+                          .groupby(["provinsi", "tahun"])["nilai_juta_usd"].sum().reset_index())
+                if not ek_cmp.empty:
+                    fig_ek_cmp = px.bar(
+                        ek_cmp, x="provinsi", y="nilai_juta_usd", color="tahun",
+                        barmode="group",
+                        title="Ekspor per Provinsi (Juta USD)",
+                        labels={"nilai_juta_usd": "Juta USD", "provinsi": "Provinsi", "tahun": "Tahun"},
+                        color_continuous_scale="Blues",
+                    )
+                    fig_ek_cmp.update_layout(height=400)
+                    st.plotly_chart(fig_ek_cmp, use_container_width=True)
+
+            # 3. NTP
+            if ntp is not None and not ntp.empty:
+                ntp_cmp = ntp[ntp["provinsi"].isin(sel_cmp_provs)].copy()
+                if not ntp_cmp.empty:
+                    fig_ntp_cmp = px.bar(
+                        ntp_cmp, x="provinsi", y="ntp", color="tahun",
+                        barmode="group",
+                        title="NTP per Provinsi (2018=100)",
+                        labels={"ntp": "NTP", "provinsi": "Provinsi", "tahun": "Tahun"},
+                        color_continuous_scale="Blues",
+                    )
+                    fig_ntp_cmp.update_layout(height=400)
+                    st.plotly_chart(fig_ntp_cmp, use_container_width=True)
+
+            # 4. Produksi Padi
+            if produksi is not None and not produksi.empty:
+                prod_cmp = (produksi[(produksi["komoditas"] == "Padi") & (produksi["provinsi"].isin(sel_cmp_provs))]
+                            .groupby(["provinsi", "tahun"])["produksi_ton"].sum().reset_index())
+                if not prod_cmp.empty:
+                    fig_prod_cmp = px.bar(
+                        prod_cmp, x="provinsi", y="produksi_ton", color="tahun",
+                        barmode="group",
+                        title="Produksi Padi per Provinsi (ton)",
+                        labels={"produksi_ton": "Produksi (ton)", "provinsi": "Provinsi", "tahun": "Tahun"},
+                        color_continuous_scale="Greens",
+                    )
+                    fig_prod_cmp.update_layout(height=400)
+                    st.plotly_chart(fig_prod_cmp, use_container_width=True)
+
+            # 5. PDRB
+            if pdrb is not None and not pdrb.empty:
+                pdrb_cmp = (pdrb[(pdrb["jenis_harga"] == "Berlaku") & (pdrb["provinsi"].isin(sel_cmp_provs))]
+                            .groupby(["provinsi", "tahun"])["nilai_miliar_rp"].sum().reset_index())
+                if not pdrb_cmp.empty:
+                    fig_pdrb_cmp = px.bar(
+                        pdrb_cmp, x="provinsi", y="nilai_miliar_rp", color="tahun",
+                        barmode="group",
+                        title="PDRB per Provinsi (Rp Miliar, Harga Berlaku)",
+                        labels={"nilai_miliar_rp": "Rp Miliar", "provinsi": "Provinsi", "tahun": "Tahun"},
+                        color_continuous_scale="Purples",
+                    )
+                    fig_pdrb_cmp.update_layout(height=400)
+                    st.plotly_chart(fig_pdrb_cmp, use_container_width=True)
+
+            st.divider()
+
+            # ----- Radar Chart (normalized 0-100) -----
+            st.markdown("### Radar Chart — Skor Ternormalisasi (0-100)")
+            st.caption("Nilai ternormalisasi: 100 = tertinggi di antara provinsi terpilih, 0 = terendah.")
+
+            radar_data = {}
+            indicators_radar = []
+
+            if not kr_f.empty and latest_kr_yr:
+                kr_latest = (kr_f[(kr_f["jenis_kredit"] == "Total") & (kr_f["tahun"] == latest_kr_yr) & (kr_f["provinsi"].isin(sel_cmp_provs))]
+                             .groupby("provinsi")["nilai_miliar_rp"].sum())
+                for p in sel_cmp_provs:
+                    radar_data.setdefault(p, {})["Kredit"] = float(kr_latest.get(p, 0))
+                indicators_radar.append("Kredit")
+
+            if not ek_f.empty and latest_ek_yr:
+                ek_latest = (ek_f[(ek_f["tahun"] == latest_ek_yr) & (ek_f["provinsi"].isin(sel_cmp_provs))]
+                             .groupby("provinsi")["nilai_juta_usd"].sum())
+                for p in sel_cmp_provs:
+                    radar_data.setdefault(p, {})["Ekspor"] = float(ek_latest.get(p, 0))
+                indicators_radar.append("Ekspor")
+
+            if ntp is not None and not ntp.empty and latest_ntp_yr:
+                ntp_latest = (ntp[(ntp["tahun"] == latest_ntp_yr) & (ntp["provinsi"].isin(sel_cmp_provs))]
+                              .set_index("provinsi")["ntp"])
+                for p in sel_cmp_provs:
+                    radar_data.setdefault(p, {})["NTP"] = float(ntp_latest.get(p, 0))
+                indicators_radar.append("NTP")
+
+            if produksi is not None and not produksi.empty and latest_prod_yr:
+                prod_latest = (produksi[(produksi["komoditas"] == "Padi") & (produksi["tahun"] == latest_prod_yr) & (produksi["provinsi"].isin(sel_cmp_provs))]
+                               .groupby("provinsi")["produksi_ton"].sum())
+                for p in sel_cmp_provs:
+                    radar_data.setdefault(p, {})["Produksi Padi"] = float(prod_latest.get(p, 0))
+                indicators_radar.append("Produksi Padi")
+
+            if pdrb is not None and not pdrb.empty and latest_pdrb_yr:
+                pdrb_latest = (pdrb[(pdrb["jenis_harga"] == "Berlaku") & (pdrb["tahun"] == latest_pdrb_yr) & (pdrb["provinsi"].isin(sel_cmp_provs))]
+                               .groupby("provinsi")["nilai_miliar_rp"].sum())
+                for p in sel_cmp_provs:
+                    radar_data.setdefault(p, {})["PDRB"] = float(pdrb_latest.get(p, 0))
+                indicators_radar.append("PDRB")
+
+            if indicators_radar and radar_data:
+                radar_df = pd.DataFrame(radar_data).T.fillna(0)
+                # Normalize each indicator 0-100
+                for ind in indicators_radar:
+                    if ind in radar_df.columns:
+                        col_max = radar_df[ind].max()
+                        col_min = radar_df[ind].min()
+                        if col_max > col_min:
+                            radar_df[ind] = ((radar_df[ind] - col_min) / (col_max - col_min) * 100).round(1)
+                        else:
+                            radar_df[ind] = 50.0
+
+                fig_radar = go.Figure()
+                colors_radar = ["#1976D2", "#D32F2F", "#2E7D32", "#FF9800", "#7B1FA2"]
+                for i, prov in enumerate(sel_cmp_provs):
+                    if prov in radar_df.index:
+                        vals = [radar_df.loc[prov, ind] for ind in indicators_radar]
+                        vals_closed = vals + [vals[0]]
+                        inds_closed = indicators_radar + [indicators_radar[0]]
+                        fig_radar.add_trace(go.Scatterpolar(
+                            r=vals_closed, theta=inds_closed,
+                            fill="toself", name=prov,
+                            line_color=colors_radar[i % len(colors_radar)],
+                            opacity=0.7,
+                        ))
+                fig_radar.update_layout(
+                    polar=dict(radialaxis=dict(visible=True, range=[0, 100])),
+                    showlegend=True, height=500,
+                    title="Radar Chart — Skor Ternormalisasi per Indikator",
+                )
+                st.plotly_chart(fig_radar, use_container_width=True)
+
+            st.divider()
+
+            # ----- Summary Table -----
+            st.markdown("### Tabel Ringkasan — Nilai Terbaru per Indikator")
+            summary_rows = []
+            for p in sel_cmp_provs:
+                row = {"Provinsi": p}
+                if not kr_f.empty and latest_kr_yr:
+                    v = kr_f[(kr_f["jenis_kredit"] == "Total") & (kr_f["tahun"] == latest_kr_yr) & (kr_f["provinsi"] == p)]["nilai_miliar_rp"].sum()
+                    row[f"Kredit {latest_kr_yr} (Rp M)"] = round(v, 1)
+                if not ek_f.empty and latest_ek_yr:
+                    v = ek_f[(ek_f["tahun"] == latest_ek_yr) & (ek_f["provinsi"] == p)]["nilai_juta_usd"].sum()
+                    row[f"Ekspor {latest_ek_yr} (Juta USD)"] = round(v, 2)
+                if ntp is not None and not ntp.empty and latest_ntp_yr:
+                    v_series = ntp[(ntp["tahun"] == latest_ntp_yr) & (ntp["provinsi"] == p)]["ntp"]
+                    row[f"NTP {latest_ntp_yr}"] = round(float(v_series.iloc[0]), 2) if not v_series.empty else None
+                if produksi is not None and not produksi.empty and latest_prod_yr:
+                    v = produksi[(produksi["komoditas"] == "Padi") & (produksi["tahun"] == latest_prod_yr) & (produksi["provinsi"] == p)]["produksi_ton"].sum()
+                    row[f"Produksi Padi {latest_prod_yr} (ton)"] = round(v, 0)
+                if pdrb is not None and not pdrb.empty and latest_pdrb_yr:
+                    v = pdrb[(pdrb["jenis_harga"] == "Berlaku") & (pdrb["tahun"] == latest_pdrb_yr) & (pdrb["provinsi"] == p)]["nilai_miliar_rp"].sum()
+                    row[f"PDRB {latest_pdrb_yr} (Rp M)"] = round(v, 1)
+                summary_rows.append(row)
+
+            if summary_rows:
+                summary_df = pd.DataFrame(summary_rows)
+                st.dataframe(summary_df, use_container_width=True, hide_index=True)
+
     # ===== TAB: DATA MENTAH =====
-    with tabs[7]:
+    with tabs[9]:
         st.subheader("Tabel Data Lengkap")
-        ds = st.selectbox("Pilih dataset", ["Kredit", "Ekspor", "Impor", "Produksi Pangan"])
+        ds = st.selectbox("Pilih dataset", ["Kredit", "Ekspor", "Impor", "NTP", "Produksi Pangan"],
+                          key="data_mentah_ds")
         df = {"Kredit": kr_f, "Ekspor": ek_f, "Impor": im_f,
-              "Produksi Pangan": produksi}[ds]
+              "NTP": ntp if ntp is not None else pd.DataFrame(),
+              "Produksi Pangan": produksi if produksi is not None else pd.DataFrame()}[ds]
         st.dataframe(df, use_container_width=True, height=500)
         st.download_button(
             f"Unduh CSV ({ds})",
             df.to_csv(index=False).encode("utf-8"),
-            file_name=f"{ds.lower()}_filtered.csv",
+            file_name=f"{ds.lower().replace(' ', '_')}_filtered.csv",
             mime="text/csv",
+            key="dl_data_mentah",
         )
 
     # ===== TAB: SUMBER DATA =====
-    with tabs[8]:
+    with tabs[10]:
         st.subheader("Status & Sumber Data Resmi")
         for name, info in status.items():
             with st.container(border=True):
