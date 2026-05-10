@@ -44,14 +44,14 @@ def make_choropleth(df: pd.DataFrame, value_col: str, title: str,
     df must have columns ['provinsi', value_col].
     """
     geo = load_geojson()
-    fig = px.choropleth_mapbox(
+    fig = px.choropleth_map(
         df,
         geojson=geo,
         locations="provinsi",
         color=value_col,
         featureidkey="id",
         center={"lat": -2.5, "lon": 118},
-        mapbox_style="carto-positron",
+        map_style="carto-positron",
         zoom=3.4,
         opacity=0.75,
         color_continuous_scale=color_scale,
